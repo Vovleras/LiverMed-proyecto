@@ -1,9 +1,16 @@
+import { Link } from "react-router";
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>© 2021</p>
+      <ul>
+          <li>
+            <Link to="/">Casita</Link>
+          </li>
+      </ul>
     </footer>
   );
 };
+
+export default Footer;
