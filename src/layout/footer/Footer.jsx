@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <ul>
-          <li>
-            <Link to="/">Casita</Link>
-          </li>
+        <li>
+          <Link to="/">Casita</Link>
+        </li>
       </ul>
     </footer>
   );
