@@ -1,7 +1,26 @@
-header {
-  background-color: #0d1533;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
+.custom-header {
+  background-color: #b1b6c8;
+}
+.btn-custom {
+  background-color: #404a6e !important;
+  color: white !important;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+
+.custom-img {
+  width: 15%;
+  height: 15%;
+}
+
+.custom-padding {
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-left: 3%;
+  margin-right: 0;
+}
+.custom-padding2 {
+  margin-right: -115px;
 }
