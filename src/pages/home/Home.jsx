@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
       <h1>Bienvenido a LiverMed </h1>
-      <img src="/LM.png" alt="Logo LiverMed" />
+      {/* <img src="/imagenes/LM.png" alt="Logo LiverMed" /> */}
     </>
   );
 };
