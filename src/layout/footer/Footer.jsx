@@ -6,12 +6,12 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="py-4 pt-0">
+    <footer className="py-14 pt-0">
       <div className="mt-0 container px-4">
         <hr className="mt-0" />
         <div className="row">
           <div className=" col-6 col-lg-4">
-            <h3 className=" fw-bold">LiverMed</h3>
+            <h3 className=" fw-medium">LiverMed</h3>
           </div>
 
           <div className="col">
