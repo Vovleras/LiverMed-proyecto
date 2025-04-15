@@ -1,8 +1,27 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, Suspense } from "react";
 import { modelos } from "../../models/modelsMap";
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  Environment,
+} from "@react-three/drei";
 
 import "./Disease.css";
+import { Canvas } from "@react-three/fiber";
+
+const SceneSetup = ({ children }) => {
+  return (
+    <>
+      <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+      <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 5]} intensity={1} />
+      <Environment preset="city" />
+      {children}
+    </>
+  );
+};
 
 const Disease = () => {
   const { nombre } = useParams();
@@ -22,6 +41,7 @@ const Disease = () => {
 
   const Modelos = modelos[nombre] || {};
 
+  console.log(Modelos);
   return (
     <div className="enfermedad">
       <div className="nombreEnfermedad">{info.nombre}</div>
@@ -30,7 +50,11 @@ const Disease = () => {
         <div className="modeloPal">
           <Suspense fallback={<div>Cargando modelo 1...</div>}>
             {Modelos.Modelo1 ? (
-              <Modelos.Modelo1 />
+              <Canvas shadows>
+                <SceneSetup>
+                  <Modelos.Modelo1 />
+                </SceneSetup>
+              </Canvas>
             ) : (
               <img src="/imagenes/fallo.png" alt="fallo" />
             )}
