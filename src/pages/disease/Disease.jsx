@@ -1,27 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, Suspense } from "react";
 import { modelos } from "../../models/modelsMap";
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  Environment,
-} from "@react-three/drei";
-
 import "./Disease.css";
-import { Canvas } from "@react-three/fiber";
-
-const SceneSetup = ({ children }) => {
-  return (
-    <>
-      <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-      <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <Environment preset="city" />
-      {children}
-    </>
-  );
-};
 
 const Disease = () => {
   const { nombre } = useParams();
@@ -49,15 +29,7 @@ const Disease = () => {
       <section className="enfermedadColumna">
         <div className="modeloPal">
           <Suspense fallback={<div>Cargando modelo 1...</div>}>
-            {Modelos.Modelo1 ? (
-              <Canvas shadows>
-                <SceneSetup>
-                  <Modelos.Modelo1 />
-                </SceneSetup>
-              </Canvas>
-            ) : (
-              <img src="/imagenes/fallo.png" alt="fallo" />
-            )}
+            {Modelos.Modelo1 ? <Modelos.Modelo1 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
           </Suspense>
         </div>
         <div className="text">
@@ -72,22 +44,14 @@ const Disease = () => {
           <p>{info.sintomas}</p>
         </div>
         <Suspense fallback={<div>Cargando modelo 1...</div>}>
-          {Modelos.Modelo2 ? (
-            <Modelos.Modelo2 />
-          ) : (
-            <img src="/imagenes/fallo.png" alt="fallo" />
-          )}
+          {Modelos.Modelo2 ? <Modelos.Modelo2 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
         </Suspense>
       </section>
 
       <section className="enfermedadRow">
         <div className="modeloSec">
           <Suspense fallback={<div>Cargando modelo 1...</div>}>
-            {Modelos.Modelo3 ? (
-              <Modelos.Modelo3 />
-            ) : (
-              <img src="/imagenes/fallo.png" alt="fallo" />
-            )}
+            {Modelos.Modelo3 ? <Modelos.Modelo3 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
           </Suspense>
         </div>
         <div className="text">
@@ -103,11 +67,7 @@ const Disease = () => {
         </div>
         <div className="modeloSec">
           <Suspense fallback={<div>Cargando modelo 1...</div>}>
-            {Modelos.Modelo4 ? (
-              <Modelos.Modelo4 />
-            ) : (
-              <img src="/imagenes/fallo.png" alt="fallo" />
-            )}
+            {Modelos.Modelo4 ? <Modelos.Modelo4 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
           </Suspense>
         </div>
       </section>

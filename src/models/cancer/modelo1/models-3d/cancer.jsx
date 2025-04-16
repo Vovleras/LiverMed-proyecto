@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export default function Modelo1(props) {
+export default function Cancer(props) {
   const { nodes, materials } = useGLTF("/models-3d/hcc.glb");
   return (
     <group {...props} dispose={null}>
