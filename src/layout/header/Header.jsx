@@ -18,7 +18,7 @@ const Header = () => {
             alt="Logo LiverMed"
             className="custom-img"
           />
-          <span className="fw-bold text-custom">LiverMed</span>
+          <span className="fw-normal text-custom">LiverMed</span>
         </NavLink>
 
         <button
