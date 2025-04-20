@@ -1,0 +1,60 @@
+.enfermedad{
+    max-width: 100vh;
+    padding-top: 40px;
+}
+
+.nombreEnfermedad {
+    max-width: 700px;
+    max-height: 100px;
+    background-color: #1E2742;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+.enfermedadRow{
+    padding-top: 30px;
+    padding-bottom: 80px;
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.modeloSec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 850px;
+}
+
+.modeloPal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 620px;
+}
+
+.text {
+padding: 2rem 1rem;
+text-align: center;
+max-width: 100vh;
+margin: auto;
+}
+
+.text h2 {
+font-size: 40px;
+color: #0D1533;
+margin-bottom: 0.5rem;
+}
+
+.text p {
+font-size: 1rem;
+color: #333;
+max-width: 600px;
+margin: 0 auto 2rem;
+}

@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function hepatitis(props) {
-  const { nodes, materials } = useGLTF('/models-3d/hepaticLiver.glb');
+  const { nodes, materials } = useGLTF('/models-3d/higadoHepatico.glb');
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.254}>
@@ -33,7 +33,7 @@ export default function hepatitis(props) {
   )
 }
 
-useGLTF.preload('/hepaticLiver.glb')
+useGLTF.preload('/models-3d/higadoHepatico.glb');
 
 
 rembrandt
