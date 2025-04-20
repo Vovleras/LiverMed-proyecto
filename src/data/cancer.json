@@ -1,7 +1,7 @@
 {
-    "nombre": "Cáncer de Hígado",
-    "descripcion": "El cáncer de hígado se refiere a los tumores que se desarrollan en el hígado. Puede ser primario (comienza en el hígado) o secundario (se disemina desde otros órganos).",
-    "sintomas": "Pérdida de peso inexplicada, dolor abdominal, ictericia, y hinchazón del abdomen.",
-    "tratamiento": "El tratamiento depende del tipo y la etapa del cáncer, y puede incluir cirugía, quimioterapia, radioterapia o trasplante de hígado.",
-    "prevencionYcuidado": "Vacunarse contra la hepatitis B, evitar el consumo excesivo de alcohol y controlar la obesidad."
+  "nombre": "Cáncer de Hígado",
+  "descripcion": "El carcinoma hepatocelular (CHC) es un tumor primario del hígado y constituye más del 90% de los tumores primarios hepáticos. Se presenta en aproximadamente el 85% de los pacientes con diagnóstico de cirrosis.",
+  "sintomas": "Pérdida de peso inexplicada, dolor abdominal, ictericia, y hinchazón del abdomen.",
+  "tratamiento": "El tratamiento depende del tipo y la etapa del cáncer, y puede incluir cirugía, quimioterapia, radioterapia o trasplante de hígado.",
+  "prevencionYcuidado": "Vacunarse contra la hepatitis B, evitar el consumo excesivo de alcohol y controlar la obesidad."
 }
