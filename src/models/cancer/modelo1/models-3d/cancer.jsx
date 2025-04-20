@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useEffect } from "react";
 
 export default function Cancer(props) {
   const { nodes, materials } = useGLTF("/models-3d/hcc.glb");
+
   return (
     <group {...props} dispose={null}>
       <mesh
