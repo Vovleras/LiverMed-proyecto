@@ -1,19 +1,28 @@
 import { useHelper } from "@react-three/drei";
 import { useRef } from "react";
-import { DirectionalLightHelper, HemisphereLight, PointLight, SpotLight} from "three";
-
+import { DirectionalLightHelper, MathUtils } from "three";
+import { useFrame } from "@react-three/fiber";
 const Lights = () => {
-    const directionalLightRef = useRef();
-    useHelper(directionalLightRef, DirectionalLightHelper);
-    return (
-      <>
-        <HemisphereLight
-          ref={hemisphereLightRef}
-          color={"red"}
-          groundColor={"blue"}
-          intensity={2}
-          />
+  const directionalLightRef = useRef();
 
+useFrame((state) => {
+  const elapsedTime = state.clock.getElapsedTime();
+  if (mainLightRef.current) {
+    mainLightRef.current.position.x = MathUtils.lerp(
+      -10,
+      1,
+      Math.sin(elapsedTime)
+    );
+    mainLightRef.current.position.z = MathUtils.lerp(
+      8,
+      1,
+      Math.cos(elapsedTime)
+    );
+  }
+});
+
+return (
+      <>
         {/*<SpotLight
           ref={spotLightRef}
           color={"red"}
@@ -31,12 +40,12 @@ const Lights = () => {
           intensity={5}
         />*/}
 
-        <ambientLight color={"#F5F5DC"} intensity={2} />
-        <directionalLightRef
-          ref={directionalLightRef}
-          color={"yellow"}
+      <directionalLight position={[0, 5, -5]} intensity={8} />
+      <directionalLight position={[0, -5, 5]} intensity={10} />
+      <directionalLight position={[0, -5, -5]} intensity={8} />
+      <directionalLight
           position={[0, 5, 5]}
-          intensity={2}
+          intensity={10}
           castShadow={true}
           shadow-mapSize={[2048, 2048]}
           shadow-camera-left={-1}
@@ -49,3 +58,5 @@ const Lights = () => {
       </>
     );
 };
+
+export default Lights;
