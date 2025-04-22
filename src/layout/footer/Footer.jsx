@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router-dom";
 
 import "./Footer.css";
 
@@ -18,24 +18,36 @@ const Footer = () => {
             <h4>Enfermedades</h4>
             <ul className="list-unstyled d-flex flex-column gap-2 ">
               <li>
-                <Link to="/" className="text-decoration-none text-dark">
+                <NavLink
+                  to="/enfermedades/cancer"
+                  className="text-decoration-none text-dark"
+                >
                   Cancer
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/about" className="text-decoration-none text-dark">
+                <NavLink
+                  to="/enfermedades/cirrosis"
+                  className="text-decoration-none text-dark"
+                >
                   Cirrosis
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/services" className="text-decoration-none text-dark">
+                <NavLink
+                  to="/enfermedades/higadoGraso"
+                  className="text-decoration-none text-dark"
+                >
                   Higado graso
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/contact" className="text-decoration-none text-dark">
+                <NavLink
+                  to="/enfermedades/hepatitis"
+                  className="text-decoration-none text-dark"
+                >
                   Hepatitis
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -44,14 +56,14 @@ const Footer = () => {
             <h4>Información</h4>
             <ul className="list-unstyled d-flex flex-column gap-2 ">
               <li>
-                <Link to="/" className="text-decoration-none text-dark">
+                <NavLink to="/" className="text-decoration-none text-dark">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/about" className="text-decoration-none text-dark">
+                <NavLink to="/about" className="text-decoration-none text-dark">
                   Sobre Nosotros
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -60,9 +72,9 @@ const Footer = () => {
             <h4>Pruebas</h4>
             <ul className="list-unstyled d-flex flex-column gap-2 ">
               <li>
-                <Link to="/" className="text-decoration-none text-dark">
+                <NavLink to="/" className="text-decoration-none text-dark">
                   Quiz
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -71,21 +83,21 @@ const Footer = () => {
         <div className="d-flex justify-content-between text-lg-start">
           <p>© 2025 LiverMed</p>
           <div className="d-flex gap-2 ">
-            <Link to="/" className="text-dark">
+            <NavLink to="/" className="text-dark">
               <i className="bi bi-instagram fs-10 me-3"></i>
-            </Link>
-            <Link to="/" className="text-dark">
+            </NavLink>
+            <NavLink to="/" className="text-dark">
               <i className="bi bi-facebook fs-10 me-3"></i>
-            </Link>
-            <Link to="/" className="text-dark">
+            </NavLink>
+            <NavLink to="/" className="text-dark">
               <i className="bi bi-twitter fs-10 me-3"></i>
-            </Link>
-            <Link to="/" className="text-dark">
+            </NavLink>
+            <NavLink to="/" className="text-dark">
               <i className="bi bi-linkedin fs-10 me-3"></i>
-            </Link>
-            <Link to="/" className="text-dark">
+            </NavLink>
+            <NavLink to="/" className="text-dark">
               <i className="bi bi-youtube fs-10"></i>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>
