@@ -12,7 +12,7 @@ extend({ ShadowMaterial });
 const Modelo1 = () => {
   return (
     <Canvas shadows>
-      <PerspectiveCamera makeDefault position={[0, 3, 6]} />
+      <PerspectiveCamera makeDefault position={[1, 4, 6]} />
       <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
 
       <Lights />
