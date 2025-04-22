@@ -1,12 +1,13 @@
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Header.css";
 
 const Header = () => {
   return (
     <nav
       style={{ backgroundColor: "#b1b6c8" }}
-      className="navbar navbar-expand-md   px-3"
+      className="navbar navbar-expand-md px-3"
     >
       <div className="container-fluid">
         <NavLink
@@ -34,7 +35,7 @@ const Header = () => {
         </button>
 
         <div
-          className="collapse navbar-collapse justify-content-end "
+          className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
           <ul className="navbar-nav gap-3">
@@ -43,10 +44,46 @@ const Header = () => {
                 Inicio
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink to="/enfermedades" className="nav-link">
+            <li className="nav-item dropdown">
+              <span
+                className="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                style={{ cursor: "pointer", fontWeight: "500" }}
+              >
                 Enfermedades
-              </NavLink>
+              </span>
+
+              <ul className="dropdown-menu dropdown-menu-custom">
+                <li>
+                  <NavLink
+                    to="/enfermedades/cirrosis"
+                    className="dropdown-item"
+                  >
+                    <span className="dropdown-text">Cirrosis</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/enfermedades/higadoGraso"
+                    className="dropdown-item"
+                  >
+                    <span className="dropdown-text">Hígado Graso</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/enfermedades/hepatitis"
+                    className="dropdown-item"
+                  >
+                    <span className="dropdown-text">Hepatitis B</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/enfermedades/cancer" className="dropdown-item">
+                    <span className="dropdown-text">Cáncer</span>
+                  </NavLink>
+                </li>
+              </ul>
             </li>
             <li className="nav-item">
               <NavLink to="/quiz" className="nav-link">
