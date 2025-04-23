@@ -2,7 +2,7 @@ import { Canvas, extend } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { ShadowMaterial } from "three";
 import Hepatitis from "./models-3d/hepatitis";
-import Lights from ".../lights/lights";
+import Lights from ".../lights/Lights";
 import { useFrame} from "@react-three/fiber";
 import { useRef } from "react";
 
@@ -12,7 +12,7 @@ extend({ ShadowMaterial });
 const Modelo1 = () => {
   return (
     <Canvas shadows>
-      <PerspectiveCamera makeDefault position={[0, 3, 6]} />
+      <PerspectiveCamera makeDefault position={[1, 4, 6]} />
       <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
 
       <Lights />
