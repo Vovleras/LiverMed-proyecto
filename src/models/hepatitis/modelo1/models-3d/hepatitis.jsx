@@ -1,32 +1,32 @@
-import React, { useRef } from "react"
-import { useGLTF } from "@react-three/drei"
-import { useEffect} from "react";
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
 
 export default function Hepatitis(props) {
-  const { nodes, materials } = useGLTF("/models-3d/higadoHepatico.glb");
-
+  const { nodes, materials } = useGLTF('models-3d/hepatitis.glb')
   return (
     <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={0.254}>
+        <group rotation={[Math.PI / 2, 0, 0]}>
+          <group rotation={[-Math.PI, 0, -Math.PI]}>
             <mesh
               castShadow
               receiveShadow
-              geometry={nodes.LiverLeft.geometry}
-              material={materials.LiverLeftMaterial}
+              geometry={nodes.Object_8.geometry}
+              material={materials.Bladder}
+              scale={4}
             />
             <mesh
               castShadow
               receiveShadow
-              geometry={nodes.LiverCentert.geometry}
-              material={materials.LiverCenterMaterial}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.LiverRight.geometry}
-              material={materials.LiverRightMaterial}
+              geometry={nodes.Object_6.geometry}
+              material={materials.Liver_Material}
+              scale={4}
             />
           </group>
-  );
+        </group>
+      </group>
+    </group>
+  )
 }
 
-useGLTF.preload("/models-3d/higadoHepatico.glb");
+useGLTF.preload('models-3d/hepatitis.glb')
