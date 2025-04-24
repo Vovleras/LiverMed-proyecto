@@ -1,0 +1,30 @@
+hmtl,
+body,
+#root {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  user-select: none;
+  overflow-x: hidden;
+  background-color: #b1b6c8;
+}
+
+h1 {
+  font-size: xx-large;
+  color: #0d1533;
+  margin-top: -50px;
+}
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  font-size: medium;
+  text-decoration: none;
+}
+
+p {
+  font-size: medium;
+}

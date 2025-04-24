@@ -1,0 +1,13 @@
+footer {
+  background-color: #dbdfef;
+  color: #0d1533;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 10px; /* Ajusta según sea necesario */
+}
+
+a {
+  text-decoration: none;
+}
