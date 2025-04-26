@@ -1,22 +1,22 @@
 {
     "nombre": "Cirrosis",
     "queEs": {
-        "parrafo1": "La cirrosis es una enfermedad hepática crónica caracterizada por la sustitución del tejido hepático sano por tejido cicatricial, lo que impide el funcionamiento adecuado del hígado.",
-        "parrafo2": null
+        "parrafo1": "La cirrosis es una condición médica crónica que implica la cicatrización progresiva del hígado debido a daño prolongado. En la cirrosis, el tejido hepático sano es reemplazado por tejido cicatricial (fibrosis), lo que impide que el hígado funcione adecuadamente, suele ser causada por consumo excesivo de alcohol, hepatitis, higado graso no alcoholico, entre otros.",
+        "parrafo2": "La cirrosis puede evolucionar a complicaciones graves como insuficiencia hepática, hipertensión portal, ascitis (acumulación de líquido en el abdomen), hemorragias, y aumenta el riesgo de desarrollar carcinoma hepatocelular (cáncer de hígado)"
     },
     "sintomas": {
-        "parrafo1": "Fatiga, Ictericia, Hinchazón abdominal, Picazón en la piel, Pérdida de apetito. Duis sit amet lobortis tortor, quis fermentum purus. Duis accumsan et nunc ac ullamcorper. Duis faucibus, massa et eleifend luctus, nibh justo interdum turpis, nec fringilla urna felis nec libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque volutpat et metus sit amet viverra. Quisque id cursus leo, id tincidunt ligula.",
-        "lista": ["item A", "item B", "item C"],
-        "parrafo2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum risus, fermentum eget semper at, porttitor eu magna. Sed in tellus non tortor consectetur imperdiet. Integer vestibulum molestie vestibulum. Morbi quis commodo felis. In hac habitasse platea dictumst. Maecenas sagittis facilisis odio, id vestibulum lorem hendrerit ut."
+        "parrafo1": "Inicialmente, la cirrosis puede ser asintomática durante años. A medida que la enfermedad progresa, los síntomas más comunes incluyen:",
+        "lista": ["Fatiga extrema y debilidad","Pérdida de apetito y pérdida de peso","Náuseas y vómitos","Hinchazón en piernas y tobillos","Ictericia (coloración amarilla de la piel y ojos)","Vasos sanguíneos visibles en forma de araña","Dolor abdominal, especialmente en el área superior derecha"],
+        "parrafo2": null
     },
     "tratamiento": {
-        "parrafo1": "El tratamiento incluye la gestión de síntomas y complicaciones. En casos avanzados, un trasplante de hígado puede ser necesario.",
-        "lista": ["item A", "item B", "item C", "item D"],
-        "parrafo2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum risus, fermentum eget semper at, porttitor eu magna. Sed in tellus non tortor consectetur imperdiet. Integer vestibulum molestie vestibulum. Morbi quis commodo felis. In hac habitasse platea dictumst. Maecenas sagittis facilisis odio, id vestibulum lorem hendrerit ut. Duis sit amet lobortis tortor, quis fermentum purus. Duis accumsan et nunc ac ullamcorper. Duis faucibus, massa et eleifend luctus, nibh justo interdum turpis, nec fringilla urna felis nec libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque volutpat et metus sit amet viverra. Quisque id cursus leo, id tincidunt ligula."
+        "parrafo1": "Actualmente, no existe cura para la cirrosis avanzada, pero sí existen tratamientos para detener o ralentizar su progresión, tratar las causas subyacentes y manejar las complicaciones.",
+        "lista": ["Atacar la causa (controlar hepatitis, dejar alcohol, bajar de peso)","Medicinas para síntomas (diuréticos, laxantes, betabloqueadores)","Procedimientos médicos (drenar líquido, reducir presión en venas)","Transplante de hígado (en casos graves)"],
+        "parrafo2": "Hasta el momento, no se ha validado científicamente un tratamiento alternativo que cure la cirrosis. Sin embargo, algunas prácticas complementarias, como los suplementos antioxidantes pueden ser útiles para el bienestar general del paciente, siempre bajo supervisión médica"
     },
     "prevencion": {
-        "parrafo1": "Evitar el consumo excesivo de alcohol, mantener un peso saludable y controlar enfermedades como la hepatitis.",
-        "lista": null,
-        "parrafo2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum risus, fermentum eget semper at, porttitor eu magna. Sed in tellus non tortor consectetur imperdiet. Integer vestibulum molestie vestibulum. Morbi quis commodo felis. In hac habitasse platea dictumst. Maecenas sagittis facilisis odio, id vestibulum lorem hendrerit ut. Duis sit amet lobortis tortor, quis fermentum purus. Duis accumsan et nunc ac ullamcorper. Duis faucibus, massa et eleifend luctus, nibh justo interdum turpis, nec fringilla urna felis nec libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque volutpat et metus sit amet viverra. Quisque id cursus leo, id tincidunt ligula." 
+        "parrafo1": "Adoptar estos hábitos puede reducir significativamente el riesgo de desarrollar cirrosis hepática:",
+        "lista": ["No abusar del alcohol","Vacunarse contra hepatitis","Mantener peso saludable","Comer sano (menos grasas, más frutas y verduras)","Hacer ejercicio regular","Controlar diabetes y colesterol","No automedicarse","Evitar compartir agujas o elementos personales","Practicar sexo seguro"],
+        "parrafo2": null
     }
 }
