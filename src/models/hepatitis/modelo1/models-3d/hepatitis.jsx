@@ -1,32 +1,30 @@
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useRef, useEffect } from "react";
+import { useFrame } from "@react-three/fiber";
+import { useGLTF } from "@react-three/drei";
 
-export default function Hepatitis(props) {
-  const { nodes, materials } = useGLTF('models-3d/hepatitis.glb')
-  return (
-    <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={0.254}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <group rotation={[-Math.PI, 0, -Math.PI]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_8.geometry}
-              material={materials.Bladder}
-              scale={4}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_6.geometry}
-              material={materials.Liver_Material}
-              scale={4}
-            />
-          </group>
-        </group>
-      </group>
-    </group>
-  )
-}
+const Hepatitis = () => {
+  const modelRef = useRef();
+  const { scene } = useGLTF("/models-3d/hepatitis.glb");
 
-useGLTF.preload('models-3d/hepatitis.glb')
+  // Animación de rotación
+  useFrame((state, delta) => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += delta * 0.3;
+    }
+  });
+
+  //  Activar sombras en todas las mallas del modelo
+  useEffect(() => {
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = false;
+      }
+    });
+  }, [scene]);
+
+  // Render del modelo
+  return <primitive ref={modelRef} object={scene} position={[0, 1, 0]} />;
+};
+
+export default Hepatitis;
