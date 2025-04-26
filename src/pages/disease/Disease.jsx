@@ -21,7 +21,17 @@ const Disease = () => {
 
   const Modelos = modelos[nombre] || {};
 
-  console.log(Modelos);
+  const renderLista = (lista) =>
+    Array.isArray(lista)
+      ? (
+        <ul>
+          {lista.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      )
+      : null;
+      
   return (
     <div className="enfermedad">
       <div className="nombreEnfermedad">{info.nombre}</div>
@@ -34,39 +44,48 @@ const Disease = () => {
         </div>
         <div className="text">
           <h2>¿Qué es?</h2>
-          <p>{info.descripcion}</p>
+          {info.queEs?.parrafo1 && <p>{info.queEs.parrafo1}</p>}
+          {info.queEs?.parrafo2 && <p>{info.queEs.parrafo2}</p>}
         </div>
       </section>
 
       <section className="enfermedadRow">
         <div className="text">
           <h2>Síntomas</h2>
-          <p>{info.sintomas}</p>
+          {info.sintomas?.parrafo1 && <p>{info.sintomas.parrafo1}</p>}
+          {renderLista(info.sintomas.lista)}
+          {info.sintomas?.parrafo2 && <p>{info.sintomas.parrafo2}</p>}          
         </div>
-        <Suspense fallback={<div>Cargando modelo 1...</div>}>
-          {Modelos.Modelo2 ? <Modelos.Modelo2 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
-        </Suspense>
+        <div className="modeloSec">
+          <Suspense fallback={<div>Cargando modelo 2...</div>}>
+            {Modelos.Modelo2 ? <Modelos.Modelo2 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
+          </Suspense>
+        </div>        
       </section>
 
       <section className="enfermedadRow">
         <div className="modeloSec">
-          <Suspense fallback={<div>Cargando modelo 1...</div>}>
+          <Suspense fallback={<div>Cargando modelo 3...</div>}>
             {Modelos.Modelo3 ? <Modelos.Modelo3 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
           </Suspense>
         </div>
         <div className="text">
           <h2>Tratamiento</h2>
-          <p>{info.tratamiento}</p>
+          {info.tratamiento?.parrafo1 && <p>{info.tratamiento.parrafo1}</p>}
+          {renderLista(info.tratamiento.lista)}
+          {info.tratamiento?.parrafo2 && <p>{info.tratamiento.parrafo2}</p>}          
         </div>
       </section>
 
       <section className="enfermedadRow">
         <div className="text">
           <h2>Prevención y cuidados</h2>
-          <p>{info.prevencionYcuidado}</p>
+          {info.prevencion?.parrafo1 && <p>{info.prevencion.parrafo1}</p>}
+          {renderLista(info.prevencion.lista)}
+          {info.prevencion?.parrafo2 && <p>{info.prevencion.parrafo2}</p>}          
         </div>
         <div className="modeloSec">
-          <Suspense fallback={<div>Cargando modelo 1...</div>}>
+          <Suspense fallback={<div>Cargando modelo 4...</div>}>
             {Modelos.Modelo4 ? <Modelos.Modelo4 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
           </Suspense>
         </div>

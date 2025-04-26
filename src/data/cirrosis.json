@@ -1,7 +1,22 @@
 {
     "nombre": "Cirrosis",
-    "descripcion": "La cirrosis es una enfermedad hepática crónica caracterizada por la sustitución del tejido hepático sano por tejido cicatricial, lo que impide el funcionamiento adecuado del hígado.",
-    "sintomas": "Fatiga, Ictericia, Hinchazón abdominal, Picazón en la piel, Pérdida de apetito.",
-    "tratamiento": "El tratamiento incluye la gestión de síntomas y complicaciones. En casos avanzados, un trasplante de hígado puede ser necesario.",
-    "prevencionYcuidado": "Evitar el consumo excesivo de alcohol, mantener un peso saludable y controlar enfermedades como la hepatitis."
+    "queEs": {
+        "parrafo1": "La cirrosis es una enfermedad hepática crónica caracterizada por la sustitución del tejido hepático sano por tejido cicatricial, lo que impide el funcionamiento adecuado del hígado.",
+        "parrafo2": null
+    },
+    "sintomas": {
+        "parrafo1": "Fatiga, Ictericia, Hinchazón abdominal, Picazón en la piel, Pérdida de apetito. Duis sit amet lobortis tortor, quis fermentum purus. Duis accumsan et nunc ac ullamcorper. Duis faucibus, massa et eleifend luctus, nibh justo interdum turpis, nec fringilla urna felis nec libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque volutpat et metus sit amet viverra. Quisque id cursus leo, id tincidunt ligula.",
+        "lista": ["item A", "item B", "item C"],
+        "parrafo2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum risus, fermentum eget semper at, porttitor eu magna. Sed in tellus non tortor consectetur imperdiet. Integer vestibulum molestie vestibulum. Morbi quis commodo felis. In hac habitasse platea dictumst. Maecenas sagittis facilisis odio, id vestibulum lorem hendrerit ut."
+    },
+    "tratamiento": {
+        "parrafo1": "El tratamiento incluye la gestión de síntomas y complicaciones. En casos avanzados, un trasplante de hígado puede ser necesario.",
+        "lista": ["item A", "item B", "item C", "item D"],
+        "parrafo2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum risus, fermentum eget semper at, porttitor eu magna. Sed in tellus non tortor consectetur imperdiet. Integer vestibulum molestie vestibulum. Morbi quis commodo felis. In hac habitasse platea dictumst. Maecenas sagittis facilisis odio, id vestibulum lorem hendrerit ut. Duis sit amet lobortis tortor, quis fermentum purus. Duis accumsan et nunc ac ullamcorper. Duis faucibus, massa et eleifend luctus, nibh justo interdum turpis, nec fringilla urna felis nec libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque volutpat et metus sit amet viverra. Quisque id cursus leo, id tincidunt ligula."
+    },
+    "prevencion": {
+        "parrafo1": "Evitar el consumo excesivo de alcohol, mantener un peso saludable y controlar enfermedades como la hepatitis.",
+        "lista": null,
+        "parrafo2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ipsum risus, fermentum eget semper at, porttitor eu magna. Sed in tellus non tortor consectetur imperdiet. Integer vestibulum molestie vestibulum. Morbi quis commodo felis. In hac habitasse platea dictumst. Maecenas sagittis facilisis odio, id vestibulum lorem hendrerit ut. Duis sit amet lobortis tortor, quis fermentum purus. Duis accumsan et nunc ac ullamcorper. Duis faucibus, massa et eleifend luctus, nibh justo interdum turpis, nec fringilla urna felis nec libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque volutpat et metus sit amet viverra. Quisque id cursus leo, id tincidunt ligula." 
+    }
 }
