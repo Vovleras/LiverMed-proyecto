@@ -1,6 +1,8 @@
-.enfermedad{
-    max-width: 100vh;
-    padding-top: 40px;
+.enfermedad {
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 50px;
+    box-sizing: border-box;
 }
 
 .nombreEnfermedad {
@@ -16,20 +18,16 @@
     border-radius: 20px;
   }
 
-.enfermedadRow{
-    padding-top: 30px;
-    padding-bottom: 80px;
-    max-width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.modeloSec{
+.enfermedadRow {
+    height: 100vh;
+    padding-top: 95px;
+    padding-bottom: 95px;
+    width: calc(100vw - 100px);
+    margin: 0 auto;
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 850px;
+    gap: 70px;
 }
 
 .modeloPal{
@@ -39,22 +37,46 @@
     height: 620px;
 }
 
+.modeloSec{
+    max-height: 850px;
+    max-width: 600px;
+}
+
+.modeloSec, .enfermedadRow text {
+    width: calc(50% - 25px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .text {
-padding: 2rem 1rem;
-text-align: center;
-max-width: 100vh;
-margin: auto;
+    text-align: left;
 }
 
 .text h2 {
-font-size: 40px;
-color: #0D1533;
-margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 40px;
+    color: #0D1533;
+    margin-bottom: 3rem;
 }
 
 .text p {
-font-size: 1rem;
-color: #333;
-max-width: 600px;
-margin: 0 auto 2rem;
+    text-align: justify;
+    font-size: 1rem;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto 1.3rem;
+}
+
+.text ul {
+    margin-bottom: 2.5rem;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.text li {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5; 
 }
