@@ -1,49 +1,31 @@
-//import { useHelper } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { 
-  //useEffect,
-  useRef } from "react";
-//import { CameraHelper, SpotLightHelper } from "three";
+import { Environment } from '@react-three/drei'
 
 const Lights = () => {
-  const spotLightRef = useRef();
-  //useHelper(spotLightRef, SpotLightHelper);
-
-  useFrame(({ clock }) => {
-    if (!spotLightRef.current) return;
-    const elapsedTime = clock.getElapsedTime();
-    spotLightRef.current.target.position.x = Math.cos(elapsedTime);
-    spotLightRef.current.target.position.z = Math.sin(elapsedTime);
-    spotLightRef.current.target.updateMatrixWorld(); 
-  });
-
-  // useEffect(()=>{
-  //   const shadowCamera = spotLightRef.current.shadow.camera;
-  //   const cameraHelper = new CameraHelper(shadowCamera);
-  //   spotLightRef.current.parent.add(cameraHelper);
-
-  //   return () => {
-  //     spotLightRef.current.parent.remove(cameraHelper);
-  //     cameraHelper.dispose();
-  //   };
-  // }, [spotLightRef])
 
   return (
     <>
-      <ambientLight intensity={1.5} />
-      <spotLight
-        ref={spotLightRef}
-        position={[0, 3, 0]}
-        distance={6}
-        intensity={15}
-        angle={Math.PI / 6}
-        penumbra={0.1}
+      <Environment preset="city" />
+      <directionalLight
+        position={[10, 10, 5]}
+        intensity={0.1}
         castShadow
-        shadow-mapSize={[128, 128]}
-        shadow-camera-near={1}
-        shadow-camera-far={2}
-        shadow-normalBias={0.05}
-      />
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-far={50}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+      />     
+
+      <mesh
+        receiveShadow
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -1.5, 0]}
+      >
+          <planeGeometry args={[50, 50]} />
+          <shadowMaterial opacity={0.2} />
+      </mesh>
     </>
   );
 };
