@@ -1,20 +1,34 @@
-import { Canvas, extend } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import { ShadowMaterial } from "three";
+import { useRef } from "react";
 import Cancer from "./models-3d/cancer";
 import Lights from "./lights/Lights";
 
-extend({ ShadowMaterial });
+const AnimateModel = () => {
+  const groupRef = useRef();
+
+  useFrame((state, delta) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += delta * 0.3;
+    }
+  });
+
+  return (
+    <group ref={groupRef}>
+      <Cancer position={[0, 0.3, 0]} scale={[4, 4, 4]} />
+    </group>
+  );
+};
 
 const Modelo1 = () => {
   return (
-    <Canvas shadows>
+    <Canvas shadows={true}>
       <PerspectiveCamera makeDefault position={[1, 2, 5]} />
       <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
       <Lights />
-      <Cancer position={[0, 0.3, 0]} scale={[4, 4, 4]} />
+      <AnimateModel />
       <mesh
-        receiveShadow
+        receiveShadow={true}
         rotation={[-Math.PI / 2, 0, 0]}
         position={[0, -1.5, 0]}
       >

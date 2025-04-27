@@ -1,25 +1,4 @@
-import { useRef } from "react";
-import { useHelper } from "@react-three/drei";
-import { DirectionalLightHelper, MathUtils } from "three";
-import { useFrame } from "@react-three/fiber";
 const Lights = () => {
-  const mainLightRef = useRef();
-  useFrame((state) => {
-    const elapsedTime = state.clock.getElapsedTime();
-    if (mainLightRef.current) {
-      mainLightRef.current.position.x = MathUtils.lerp(
-        -2,
-        3,
-        Math.sin(elapsedTime)
-      );
-      mainLightRef.current.position.z = MathUtils.lerp(
-        8,
-        3,
-        Math.cos(elapsedTime)
-      );
-    }
-  });
-
   return (
     <>
       <directionalLight position={[10, 10, 5]} intensity={10} />
@@ -29,7 +8,7 @@ const Lights = () => {
       <directionalLight
         position={[-10, 10, 5]}
         intensity={15}
-        castShadow
+        castShadow={true}
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
         shadow-camera-left={-10}
@@ -38,7 +17,6 @@ const Lights = () => {
         shadow-camera-bottom={-10}
         shadow-camera-near={1}
         shadow-camera-far={50}
-        ref={mainLightRef}
       />
     </>
   );
