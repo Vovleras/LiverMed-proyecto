@@ -1,7 +1,44 @@
 {
   "nombre": "Cáncer de Hígado",
-  "descripcion": "El carcinoma hepatocelular (CHC) es un tumor primario del hígado y constituye más del 90% de los tumores primarios hepáticos. Se presenta en aproximadamente el 85% de los pacientes con diagnóstico de cirrosis.",
-  "sintomas": "Pérdida de peso inexplicada, dolor abdominal, ictericia, y hinchazón del abdomen.",
-  "tratamiento": "El tratamiento depende del tipo y la etapa del cáncer, y puede incluir cirugía, quimioterapia, radioterapia o trasplante de hígado.",
-  "prevencionYcuidado": "Vacunarse contra la hepatitis B, evitar el consumo excesivo de alcohol y controlar la obesidad."
+  "queEs": {
+    "parrafo1": "El carcinoma hepatocelular (CHC), es la segunda causa de muerte tumoral en el mundo y la causa más común de malignidad hepática, con una incidencia pico entre los 30 y 50 años, los virus hepatotropos son la principal etiología implicada en el desarrollo decarcinoma hepatocelular a nivel mundial y corresponde a alrededor del 57% a 78% de todos los cánceres. En Colombia se estima una incidencia de 2 casos por cada 100.000 habitantes.",
+    "parrafo2": "a nivel mundial los virus de la hepatitis B y C conforman los factores de riesgo más importantes para el desarrollo de cirrosis y CHC, sin embargo, el alcohol es la primera causa en nuestro país. Sin tratamiento los pacientes con CHC tienen una sobrevida de 1 a 10% a 5 años, pero con las estrategias de prevención, diagnóstico temprano y tratamiento oportuno, la sobrevida de estos pacientes ha mejorado a más del 50%, dependiendo del estadio Child-Pugh.  "
+  },
+  "sintomas": {
+    "parrafo1": "A menudo, los signos y síntomas del cáncer de hígado no aparecen sino hasta que la enfermedad se encuentra en etapas más avanzadas, aunque a veces pueden presentarse más temprano. Si acude al médico cuando comienza a notar los síntomas, es posible que el cáncer se diagnostique más temprano, cuando es más probable que el tratamiento sea útil. Algunos de los síntomas más comunes del cáncer de hígado son:",
+    "lista": [
+      "Pérdida de peso ",
+      "Pérdida de apetito",
+      "Sensación de llenura tras comer poco",
+      "Náuseas o vómitos",
+      "Ictericia (coloración amarilla de la piel y ojos)",
+      "Agrandamiento del hígado (llenura debajo de las costillas del lado derecho)",
+      "Dolor abdominal o cerca del omóplato derecho",
+      "Hinchazon o acumulación de líquido en el abdomen (ascitis)",
+      "Picazón"
+    ],
+    "parrafo2": null
+  },
+  "tratamiento": {
+    "parrafo1": "El tratamiento se divide en curativos y paliativos y se basan según las características del tumor, el estado del paciente, la reserva funcional del hígado, entre otros.",
+    "lista": [
+      "Curativos: Trasplante de hígado, ablación local y resección .",
+      "Paleativos: Embolización , radiofrecuencia y terapia dirigida."
+    ],
+    "parrafo2": "Se considera que la quimioembolización transarterial con microesferas cargadas continúa siendo una alternativa de tratamiento razonable para los pacientes con hepatocarcinoma no susceptibles a manejo con intención curativa, y puede servir como puente para que nuevamente la curación sea una opción. "
+  },
+  "prevencion": {
+    "parrafo1": "Los factores que incrementan la probabilidad de desarrollar cáncer se conocen como factores de riesgo, mientras que aquellos que la reducen se denominan factores de protección contra el cáncer. La prevención consiste en evitar los factores de riesgo y aumentar los factores de protección.",
+    "lista": [
+      "Vacunación contra la hepatitis B",
+      "Tratamiento de la infección crónica por el virus de la hepatitis B",
+      "Reducción de la exposición a la aflatoxina B1",
+      "Comer sano (menos grasas, más frutas y verduras)",
+      "Hacer ejercicio regular",
+      "Limitar la exposición de químicos que causan cáncer (aflatoxinas)",
+      "Evitar el consumo excesivo de alcohol o consumirlo con moderación.",
+      "Evitar el tabaquismo."
+    ],
+    "parrafo2": null
+  }
 }

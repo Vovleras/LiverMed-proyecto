@@ -4,19 +4,17 @@ import { DirectionalLightHelper, MathUtils } from "three";
 import { useFrame } from "@react-three/fiber";
 const Lights = () => {
   const mainLightRef = useRef();
-
-  //useHelper(mainLightRef, DirectionalLightHelper);
   useFrame((state) => {
     const elapsedTime = state.clock.getElapsedTime();
     if (mainLightRef.current) {
       mainLightRef.current.position.x = MathUtils.lerp(
-        -10,
-        1,
+        -2,
+        3,
         Math.sin(elapsedTime)
       );
       mainLightRef.current.position.z = MathUtils.lerp(
         8,
-        1,
+        3,
         Math.cos(elapsedTime)
       );
     }
@@ -25,8 +23,6 @@ const Lights = () => {
   return (
     <>
       <directionalLight position={[10, 10, 5]} intensity={10} />
-
-      {/* Luces secundarias sin sombras */}
       <directionalLight position={[10, 10, -5]} intensity={8} />
       <directionalLight position={[10, -10, -5]} intensity={10} />
       <directionalLight position={[-10, -10, -5]} intensity={8} />
