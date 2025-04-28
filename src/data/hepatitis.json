@@ -1,7 +1,23 @@
 {
     "nombre": "Hepatitis",
-    "descripcion": "La hepatitis es la inflamación del hígado, generalmente causada por una infección viral. Existen varios tipos, incluyendo hepatitis A, B, C, D y E.",
-    "sintomas": "Ictericia, fatiga, dolor en el abdomen, pérdida de apetito, y náuseas.",
-    "tratamiento": "El tratamiento varía según el tipo de hepatitis; puede incluir medicamentos antivirales y, en algunos casos, trasplante de hígado.",
-    "prevencionYcuidado": "La vacunación, el uso de prácticas seguras durante la relación sexual y evitar compartir agujas son esenciales para prevenir la hepatitis."
+    "queEs": {
+        "parrafo1": "La hepatitis es la inflamación del hígado, generalmente causada por una infección viral. Existen varios tipos de hepatitis, incluyendo A, B, C, D y E, cada uno con diferentes modos de transmisión y gravedad.",
+        "parrafo2": "Además de las infecciones virales, la hepatitis también puede ser causada por el consumo excesivo de alcohol, toxinas, medicamentos y ciertas condiciones autoinmunes. Si no se trata, puede progresar a fibrosis (cicatrización), cirrosis o cáncer de hígado."
+    },
+    "sintomas": {
+        "parrafo1": "Los síntomas de la hepatitis pueden variar según el tipo y la gravedad, pero los más comunes incluyen:",
+        "lista": ["Ictericia (coloración amarilla de la piel y ojos)", "Fatiga", "Dolor en el abdomen", "Pérdida de apetito", "Náuseas y vómitos", "Orina oscura", "Heces de color pálido", "Dolor articular"],
+        "parrafo2": null
+    },
+    "tratamiento": {
+        "parrafo1": "El tratamiento de la hepatitis depende de su tipo y gravedad. Algunos casos se resuelven espontáneamente, mientras que otros requieren intervención médica.",
+        "lista": ["Reposo y cuidados de apoyo (hepatitis A y E)", "Medicamentos antivirales para hepatitis B y C", "Transplante de hígado en casos de daño hepático severo", "Seguimiento médico regular para controlar complicaciones"],
+        "parrafo2": "Es importante no automedicarse y evitar el consumo de alcohol durante el tratamiento para proteger al hígado."
+    },
+    "prevencion": {
+        "parrafo1": "Se pueden tomar medidas efectivas para prevenir la hepatitis, especialmente los tipos virales:",
+        "lista": ["Vacunarse contra la hepatitis A y B", "Evitar compartir agujas o elementos personales", "Practicar sexo seguro", "Consumir agua potable y alimentos higiénicos", "Usar equipo médico esterilizado", "Controlar el consumo de alcohol", "Realizarse pruebas médicas periódicas si se está en riesgo"],
+        "parrafo2": null
+    }
 }
+
