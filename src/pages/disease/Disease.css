@@ -19,15 +19,15 @@
   }
 
 .enfermedadRow {
-    height: 100vh;
-    padding-top: 95px;
-    padding-bottom: 95px;
-    width: calc(100vw - 100px);
+    min-height: 100vh;
+    padding: 6rem 0;
+    width: min(90%, 1600px);
     margin: 0 auto;
-    align-items: center;
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    gap: 70px;
+    gap: 4rem;
+    align-items: center;
 }
 
 .modeloPal{
