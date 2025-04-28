@@ -1,7 +1,7 @@
 .enfermedad {
     width: 100%;
     max-width: 100%;
-    padding: 40px 50px;
+    padding: 25px 50px;
     box-sizing: border-box;
 }
 
@@ -20,7 +20,7 @@
 
 .enfermedadRow {
     min-height: 100vh;
-    padding: 6rem 0;
+    padding: 4.6rem 0;
     width: min(90%, 1600px);
     margin: 0 auto;
     flex-wrap: wrap;
@@ -39,13 +39,19 @@
     max-width: 800px;
 }
 
-.modeloSec{
-    max-height: 850px;
+.modeloSec {
+    position: relative;
     max-width: 600px;
+    max-height: calc(100vh - 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1rem;
 }
 
+
 .modeloSec, .enfermedadRow text {
-    width: calc(50% - 25px);
     display: flex;
     justify-content: center;
     align-items: center;
