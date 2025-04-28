@@ -9,7 +9,7 @@ const FattyLiver = () => {
   // Animación de rotación
   useFrame((state, delta) => {
     if (modelRef.current) {
-      modelRef.current.rotation.y += delta * 0.3;
+      modelRef.current.rotation.y += delta * 0.4;
     }
   });
 
@@ -24,7 +24,7 @@ const FattyLiver = () => {
   }, [scene]);
 
   // Render del modelo
-  return <primitive ref={modelRef} object={scene} position={[0, 1, 0]} />;
+  return <primitive ref={modelRef} object={scene} position={[0, 2, 0]} />;
 };
 
 export default FattyLiver;
