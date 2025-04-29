@@ -24,7 +24,7 @@ const FattyLiver = () => {
   }, [scene]);
 
   // Render del modelo
-  return <primitive ref={modelRef} object={scene} position={[0, 2, 0]} />;
+  return <primitive ref={modelRef} object={scene} position={[0, 0.5, 0]} scale={[2.5, 2.5, 2.5]} />;
 };
 
 export default FattyLiver;
