@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <nav
       style={{ backgroundColor: "#b1b6c8" }}
-      className="navbar navbar-expand-md px-3"
+      className="navbar navbar-expand-md px-3 fixed-top"
     >
       <div className="container-fluid">
         <NavLink
