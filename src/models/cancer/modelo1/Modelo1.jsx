@@ -1,7 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import { useRef } from "react";
-import Cancer from "./models-3d/Cancer.jsx";
+import Cancer from "./models-3d/CancerHcc";
 import Lights from "./lights/Lights";
 import Recipient from "./models-3d/Recipient";
 import { OrbitControls } from "@react-three/drei";

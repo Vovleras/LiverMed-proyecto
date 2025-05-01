@@ -3,9 +3,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export function Ictericia(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF(
-    "/models-3d/cancer/ictericia.glb"
-  );
+  const { nodes, materials, animations } = useGLTF("/models-3d/ictericia.glb");
   const { actions } = useAnimations(animations, group);
   return (
     <group ref={group} {...props} dispose={null}>
@@ -80,4 +78,4 @@ export function Ictericia(props) {
   );
 }
 
-useGLTF.preload("/models-3d/cancer/ictericia.glb");
+useGLTF.preload("/models-3d/ictericia.glb");
