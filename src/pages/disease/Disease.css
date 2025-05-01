@@ -1,91 +1,108 @@
 .enfermedad {
-    width: 100%;
-    max-width: 100%;
-    padding: 25px 50px;
-    box-sizing: border-box;
-    margin-top: 115px;
+  width: 100%;
+  max-width: 100%;
+  padding: 25px 50px;
+  box-sizing: border-box;
+  margin-top: 115px;
 }
 
 .nombreEnfermedad {
-    max-width: 700px;
-    max-height: 100px;
-    background-color: #1E2742;
-    padding: 1rem;
-    text-align: center;
-    color: white;
-    font-size: 50px;
-    font-weight: 500;
-    margin: 0 auto;
-    border-radius: 20px;
-  }
-
-.enfermedadRow {
-    min-height: 100vh;
-    padding: 4.6rem 0;
-    width: min(90%, 1600px);
-    margin: 0 auto;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    align-items: center;
+  max-width: 700px;
+  max-height: 100px;
+  background-color: #1e2742;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  font-weight: 500;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
-.modeloPal{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    height: 620px;
-    max-width: 800px;
+.enfermedadRow {
+  min-height: 100vh;
+  padding: 4.6rem 0;
+  width: min(90%, 1600px);
+  margin: 0 auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+}
+
+.modeloPal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 620px;
+  max-width: 800px;
 }
 
 .modeloSec {
-    position: relative;
-    max-width: 600px;
-    max-height: calc(100vh - 4rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    padding: 1rem;
+  position: relative;
+  max-width: 600px;
+  max-height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  padding: 1rem;
 }
 
-
-.modeloSec, .enfermedadRow text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.modeloSec,
+.enfermedadRow text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text {
-    text-align: left;
+  text-align: left;
 }
 
 .text h2 {
-    text-align: center;
-    font-size: 40px;
-    color: #0D1533;
-    margin-bottom: 3rem;
+  text-align: center;
+  font-size: 40px;
+  color: #0d1533;
+  margin-bottom: 3rem;
 }
 
 .text p {
-    text-align: justify;
-    font-size: 1rem;
-    color: #333;
-    max-width: 600px;
-    margin: 0 auto 1.3rem;
+  text-align: justify;
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto 1.3rem;
 }
 
 .text ul {
-    margin-bottom: 2.5rem;
-    list-style-type: disc;
-    list-style-position: inside;
+  margin-bottom: 2.5rem;
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
 .text li {
-    margin-bottom: 0.5rem;
-    color: #333;
-    font-size: 1rem;
-    line-height: 1.5; 
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btn-personalizado {
+  background-color: #0d1533 !important;
+  border: #0d1533 !important    ;
+  box-shadow: none;
+  color: white !important;
+}
+
+.btn-personalizado:hover {
+  background-color: #404a6e !important;
+  color: white;
+}
+
+.btn-personalizado:active {
+  background-color: #1e2742 !important;
+  color: white;
 }
