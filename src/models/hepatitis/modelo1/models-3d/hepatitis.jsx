@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 
 const Hepatitis = () => {
   const modelRef = useRef();
-  const { scene } = useGLTF("/models-3d/hepatitis.glb");
+  const { scene } = useGLTF("/models-3d/hepatitis/hepatitis.glb");
 
   // Animación de rotación
   useFrame((state, delta) => {

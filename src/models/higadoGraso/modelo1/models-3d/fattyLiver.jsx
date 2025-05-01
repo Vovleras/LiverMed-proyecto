@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 
 const FattyLiver = () => {
   const modelRef = useRef();
-  const { scene } = useGLTF("/models-3d/fattyLiver.glb");
+  const { scene } = useGLTF("/models-3d/higadoGraso/fattyLiver.glb");
 
   // Animación de rotación
   useFrame((state, delta) => {
@@ -24,7 +24,14 @@ const FattyLiver = () => {
   }, [scene]);
 
   // Render del modelo
-  return <primitive ref={modelRef} object={scene} position={[0, 0.5, 0]} scale={[2.5, 2.5, 2.5]} />;
+  return (
+    <primitive
+      ref={modelRef}
+      object={scene}
+      position={[0, 0.5, 0]}
+      scale={[2.5, 2.5, 2.5]}
+    />
+  );
 };
 
 export default FattyLiver;
