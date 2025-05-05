@@ -4,7 +4,9 @@ import { useFrame } from "@react-three/fiber";
 import { useEffect, useCallback } from "react";
 export function Ictericia({ actionRef, ...props }) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models-3d/ictericia.glb");
+  const { nodes, materials, animations } = useGLTF(
+    "/models-3d/models-cancer/ictericia.glb"
+  );
   const { actions } = useAnimations(animations, group);
   const [currentAction, setCurrentAction] = useState("Idle");
 
@@ -147,4 +149,4 @@ export function Ictericia({ actionRef, ...props }) {
   );
 }
 
-useGLTF.preload("/models-3d/ictericia.glb");
+useGLTF.preload("/models-3d/models-cancer/ictericia.glb");
