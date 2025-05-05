@@ -2,7 +2,9 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function CirrhoticLiver(props) {
-  const { nodes, materials } = useGLTF("/models-3d/cirrhoticLiver.glb");
+  const { nodes, materials } = useGLTF(
+    "/models-3d/models-cirrosis/cirrhoticLiver.glb"
+  );
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -27,4 +29,4 @@ export default function CirrhoticLiver(props) {
   );
 }
 
-useGLTF.preload("/models-3d/cirrhoticLiver.glb");
+useGLTF.preload("/models-3d/models-cirrosis/cirrhoticLiver.glb");
