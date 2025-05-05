@@ -1,4 +1,3 @@
-// modelsMap.js
 import { lazy } from "react";
 
 export const modelos = {

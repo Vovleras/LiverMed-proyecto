@@ -6,7 +6,7 @@
     },
     "sintomas": {
         "parrafo1": "Inicialmente, la cirrosis puede ser asintomática durante años. A medida que la enfermedad progresa, los síntomas más comunes incluyen:",
-        "lista": ["Fatiga extrema y debilidad","Pérdida de apetito y pérdida de peso","Náuseas y vómitos","Hinchazón en piernas y tobillos","Ictericia (coloración amarilla de la piel y ojos)","Vasos sanguíneos visibles en forma de araña","Dolor abdominal, especialmente en el área superior derecha"],
+        "lista": ["Fatiga extrema y debilidad","Pérdida de apetito y pérdida de peso","Náuseas y vómitos","Hinchazón en piernas, tobillos y abdomen","Ictericia (coloración amarilla de la piel y ojos)","Vasos sanguíneos visibles en forma de araña","Dolor abdominal, especialmente en el área superior derecha"],
         "parrafo2": null
     },
     "tratamiento": {
