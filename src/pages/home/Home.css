@@ -46,6 +46,17 @@
     border-radius: 1vh;
 }
 
+.presentationModel {
+    position: relative;
+    width: 40vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    padding: 1rem;
+}
+
 .exploracion{
     padding-top: 4vh;
     min-height: 100vh;
@@ -70,7 +81,7 @@
     font-size: 6vh;
 }
 
-  
+
 
 
 
