@@ -22,7 +22,7 @@ export const images = [
   },
   {
     id: 4,
-    src: "/imagenes/hcc.jpg",
+    src: "/imagenes/hcc.png",
     alt: "Cáncer de Hígado",
     name: "Cáncer de Hígado",
     path: "/enfermedades/cancer",
