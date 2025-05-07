@@ -5,6 +5,8 @@ import Carousel from './Carrusel';
 import { images } from '../../data/images';
 import "./Home.css";
 
+import LiverModel from "../../models/homeModel/homeModel";
+
 
 const getRandomModelo1 = () => {
   const enfermedades = Object.keys(modelos);
@@ -34,8 +36,12 @@ const Home = () => {
 
       <section className="exploracion">
         <h1>Explora con total inmersión</h1>
-        <Suspense fallback={<div>Cargando modelo 3d</div>}>      
-              <img src="/imagenes/liver.png" alt="liver" />
+        <Suspense fallback={<div>Cargando modelo 3d</div>}>
+            {LiverModel ? (
+              <LiverModel />
+            ) : (
+              <img src="/imagenes/fallo.png" alt="fallo" />
+            )}
         </Suspense>
       </section>
 

@@ -5,7 +5,7 @@ const Recipient = () => {
       rotation={[-Math.PI / 2, 0, 0]}
       position={[0, -3.7, 0]}
     >
-      <planeGeometry args={[100, 100]} />
+      <planeGeometry args={[50, 50]} />
       <shadowMaterial opacity={0.4} />
     </mesh>
   );
