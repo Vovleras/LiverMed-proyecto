@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useCallback } from "react";
+
 export function Ictericia({ actionRef, ...props }) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
@@ -9,8 +10,6 @@ export function Ictericia({ actionRef, ...props }) {
   );
   const { actions } = useAnimations(animations, group);
   const [currentAction, setCurrentAction] = useState("Idle");
-
-  console.log(animations.map((a) => a.name));
 
   const [, get] = useKeyboardControls();
 
@@ -24,6 +23,7 @@ export function Ictericia({ actionRef, ...props }) {
       setCurrentAction("Pain");
     }
   });
+
   useEffect(() => {
     if (actionRef) {
       actionRef.current = (name) => {
@@ -66,7 +66,6 @@ export function Ictericia({ actionRef, ...props }) {
     },
     [actions]
   );
-
   return (
     <group ref={group} {...props} dispose={null} onClick={handleAvatar}>
       <group name="Scene">
@@ -76,7 +75,8 @@ export function Ictericia({ actionRef, ...props }) {
             geometry={nodes.Body.geometry}
             material={materials.Body}
             skeleton={nodes.Body.skeleton}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="EyeLeft"
@@ -85,7 +85,8 @@ export function Ictericia({ actionRef, ...props }) {
             skeleton={nodes.EyeLeft.skeleton}
             morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary}
             morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="EyeRight"
@@ -94,14 +95,16 @@ export function Ictericia({ actionRef, ...props }) {
             skeleton={nodes.EyeRight.skeleton}
             morphTargetDictionary={nodes.EyeRight.morphTargetDictionary}
             morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Hair"
             geometry={nodes.Hair.geometry}
             material={materials.Hair}
             skeleton={nodes.Hair.skeleton}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Head_1"
@@ -110,28 +113,32 @@ export function Ictericia({ actionRef, ...props }) {
             skeleton={nodes.Head_1.skeleton}
             morphTargetDictionary={nodes.Head_1.morphTargetDictionary}
             morphTargetInfluences={nodes.Head_1.morphTargetInfluences}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="OutfitBottom"
             geometry={nodes.OutfitBottom.geometry}
             material={materials.OutfitBottom}
             skeleton={nodes.OutfitBottom.skeleton}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="OutfitFootwear"
             geometry={nodes.OutfitFootwear.geometry}
             material={materials.OutfitFootwear}
             skeleton={nodes.OutfitFootwear.skeleton}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="OutfitTop"
             geometry={nodes.OutfitTop.geometry}
             material={materials.OutfitTop}
             skeleton={nodes.OutfitTop.skeleton}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <skinnedMesh
             name="Teeth"
@@ -140,7 +147,8 @@ export function Ictericia({ actionRef, ...props }) {
             skeleton={nodes.Teeth.skeleton}
             morphTargetDictionary={nodes.Teeth.morphTargetDictionary}
             morphTargetInfluences={nodes.Teeth.morphTargetInfluences}
-            castShadow={true}
+            castShadow
+            receiveShadow
           />
           <primitive object={nodes.Hips} />
         </group>
