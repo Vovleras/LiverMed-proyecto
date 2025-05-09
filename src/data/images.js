@@ -1,7 +1,7 @@
 export const images = [
   {
     id: 1,
-    src: "https://p8.itc.cn/images01/20201112/aa0f6f221ed84785935d10cc7f5f4f3c.jpeg",
+    src: "/imagenes/hgraso.png",
     alt: "Hígado graso",
     name: "Hígado graso",
     path: "/enfermedades/higadoGraso",
