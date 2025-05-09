@@ -4,6 +4,7 @@ import { modelos } from "../../models/modelsMap";
 import Carousel from "./Carrusel";
 import { images } from "../../data/images";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const getRandomModelo1 = () => {
@@ -14,6 +15,7 @@ const getRandomModelo1 = () => {
 };
 
 const Home = () => {
+  const navigate = useNavigate();
   const ModeloAleatorio = useMemo(() => getRandomModelo1(), []);
   const [mostrarBoton, setMostrarBoton] = useState(true);
   const [scrollTop, setScrollTop] = useState(false);
@@ -56,6 +58,18 @@ const Home = () => {
     }
   };
 
+  const handleLearn = () => {
+    // Encuentra la enfermedad correspondiente al modelo aleatorio
+    const enfermedad = Object.keys(modelos).find(
+      (key) => modelos[key].Modelo1 === ModeloAleatorio
+    );
+
+    if (enfermedad) {
+      // Navega a la ruta de la enfermedad
+      navigate(`/enfermedades/${enfermedad}`);
+    }
+  };
+
   return (
     <div>
       <section className="homePresentation">
@@ -73,7 +87,10 @@ const Home = () => {
             sangre y excretar un producto llamado bilis, que ayuda a descomponer
             las grasas y las prepara para su posterior digestión y absorción.
           </p>
-          <button className="BotonAprende">Aprende ahora</button>
+          <button className="BotonAprende" onClick={handleLearn}>
+            {" "}
+            Aprende ahora
+          </button>
         </div>
 
         <div className="presentationModel">
