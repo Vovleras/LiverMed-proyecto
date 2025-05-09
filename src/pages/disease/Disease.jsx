@@ -15,7 +15,11 @@ const Disease = () => {
       .then((modulo) => setInfo(modulo.default))
       .catch(() => setError(true));
 
-    const handleScrollEvent = () => {
+    // Forzar el desplazamiento al inicio
+    window.scrollTo({ top: 0, behavior: "auto" });
+
+    // Evaluar la posición inicial del scroll
+    const evaluateScrollPosition = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
@@ -26,6 +30,14 @@ const Disease = () => {
         setScrollTop(false);
       }
       setMostrarBoton(true);
+    };
+
+    // Evaluar la posición inicial
+    evaluateScrollPosition();
+
+    // evento de scroll
+    const handleScrollEvent = () => {
+      evaluateScrollPosition();
     };
 
     window.addEventListener("scroll", handleScrollEvent);
