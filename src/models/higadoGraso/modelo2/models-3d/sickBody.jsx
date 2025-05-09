@@ -16,7 +16,7 @@ const SickBody = ({ scale = [1, 1, 1], position = [0, 0, 0] }) => {
           child.receiveShadow = true;
           child.material.metalness = 0.2;
           child.material.roughness = 0.7;
-          child.material.color.set("lightgray");
+          child.material.color.set("yellow");
         }
       });
     }
