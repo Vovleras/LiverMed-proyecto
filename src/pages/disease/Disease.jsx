@@ -15,17 +15,34 @@ const Disease = () => {
       .then((modulo) => setInfo(modulo.default))
       .catch(() => setError(true));
 
-    const handleScrollEvent = () => {
+    // Forzar el desplazamiento al inicio
+    window.scrollTo({ top: 0, behavior: "auto" });
+
+    // Evaluar la posición inicial del scroll
+    const evaluateScrollPosition = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      if (scrollTop + windowHeight >= documentHeight - 210) {
-        setScrollTop(true);
-      } else {
+      // Si estamos al final de la página, activar "Subir"
+      if (scrollTop == 0) {
         setScrollTop(false);
+      } else {
+        if (scrollTop + windowHeight >= documentHeight - 210) {
+          setScrollTop(true);
+        } else {
+          setScrollTop(false);
+        }
       }
       setMostrarBoton(true);
+    };
+
+    // Evaluar la posición inicial al cargar la página
+    evaluateScrollPosition();
+
+    // Agregar el evento de scroll
+    const handleScrollEvent = () => {
+      evaluateScrollPosition();
     };
 
     window.addEventListener("scroll", handleScrollEvent);
