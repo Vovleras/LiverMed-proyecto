@@ -32,7 +32,7 @@ const Modelo2 = () => {
               whiteSpace: "nowrap",
             }}
           >
-            Cuerpo enfermo
+            Tecla 'A' para animar el modelo
           </h1>
         </Html>
 
