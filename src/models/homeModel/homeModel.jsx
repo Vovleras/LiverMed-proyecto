@@ -55,13 +55,13 @@ export default function LiverModel() {
                 <planeGeometry args={[50, 50]} />
                 <shadowMaterial opacity={0.2} />
             </mesh>
-      <Modelo position={[0, 0, 0]} />
-      <OrbitControls
-            minDistance={2}
-            maxDistance={7}
+            <Modelo position={[0, 0, 0]} />
+            <OrbitControls
+              minDistance={2}
+              maxDistance={7}
               enablePan={false}
               autoRotate={false}
-        />
+            />
     </Canvas>
   )
 }
