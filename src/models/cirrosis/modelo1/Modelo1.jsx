@@ -24,7 +24,7 @@ function LiverModel({ ...props }) {
   )
 }
 
-export default function Scene() {
+export default function Modelo1() {
   return (
     <Canvas
       shadows
