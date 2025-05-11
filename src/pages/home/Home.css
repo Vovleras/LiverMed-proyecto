@@ -1,88 +1,85 @@
 .homePresentation {
-    min-height: 100vh;
-    padding-top: 10vh;
-    width: min(90%, 1600px);
-    margin: 0 auto;
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-  }
+  min-height: 100vh;
+  padding-top: 10vh;
+  width: min(90%, 1600px);
+  margin: 0 auto;
+  display: flex;
+
+  align-items: center;
+}
 
 .homeText {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10vw;
 }
 
 .homeText > h1 {
-    min-width: 38vw;
-    text-align: left;
-    color: #0D1533;
-    font-weight: 700;
-    font-size: 8vh;
+  min-width: 38vw;
+  text-align: left;
+  color: #0d1533;
+  font-weight: 700;
+  font-size: 8vh;
 }
 
 .homeText > p {
-    max-width: 34vw;
-    text-align: left;
-    color: #0D1533;
-    font-weight: 300;
-    font-size: 2vh;
+  max-width: 34vw;
+  text-align: left;
+  color: #0d1533;
+  font-weight: 300;
+  font-size: 2vh;
 }
 
-.BotonAprende{
-    align-self: left;
-    padding-top: 1.8vh;
-    padding-bottom: 1.8vh;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    align-items: center;
-    text-align: center;
-    background-color: #0d1533;
-    border: #0d1533;
-    box-shadow: none;
-    color: white;
-    font-size: 2vh;
-    border-radius: 1vh;
+.BotonAprende {
+  align-self: left;
+  padding-top: 1.8vh;
+  padding-bottom: 1.8vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  align-items: center;
+  text-align: center;
+  background-color: #0d1533;
+  border: #0d1533;
+  box-shadow: none;
+  color: white;
+  font-size: 2vh;
+  border-radius: 1vh;
 }
 
 .presentationModel {
-    position: relative;
-    width: 40vw;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    padding: 1rem;
+  position: relative;
+  width: 60vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  padding: 1rem;
 }
 
-.exploracion{
-    padding-top: 4vh;
-    min-height: 100vh;
+.exploracion {
+  padding-top: 4vh;
+  min-height: 100vh;
+  margin-left: 10vw;
 }
 
 .exploracion > h1 {
-    text-align: left;
-    color: #0D1533;
-    font-weight: 600;
-    font-size: 6vh;
+  text-align: left;
+  color: #0d1533;
+  font-weight: 600;
+  font-size: 6vh;
 }
 
-.enfermedadesComunes{
-    padding-top: 4vh;
-    min-height: 100vh;
+.enfermedadesComunes {
+  padding-top: 4vh;
+  min-height: 100vh;
 }
 
 .enfermedadesComunes > h1 {
-    text-align: left;
-    color: #0D1533;
-    font-weight: 600;
-    font-size: 6vh;
+  text-align: left;
+  color: #0d1533;
+  font-weight: 600;
+  font-size: 6vh;
+  margin-left: 10vw;
 }
-
-
-
-
-
-
