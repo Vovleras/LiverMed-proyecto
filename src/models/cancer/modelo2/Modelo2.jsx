@@ -38,7 +38,7 @@ const Modelo2 = () => {
             actionRef={actionRef}
           />
 
-          <Title title={"¡Tocar!"} onClick={handlePain} />
+          <Title title={"¡Haz Click!"} onClick={handlePain} />
         </Canvas>
         <div
           style={{
