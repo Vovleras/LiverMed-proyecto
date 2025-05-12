@@ -5,7 +5,7 @@ const Title = ({ title, onClick }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Center position={[0, 2.4, 0]}>
+    <Center position={[-0.03, 2.3, 0]}>
       <Text3D
         font="/fonts/unicorn.json"
         bevelEnabled
@@ -14,7 +14,7 @@ const Title = ({ title, onClick }) => {
         height={0.01}
         lineHeight={0.8}
         letterSpacing={0.02}
-        size={0.3}
+        size={0.2}
         onClick={onClick}
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}
