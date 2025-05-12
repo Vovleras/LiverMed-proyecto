@@ -83,10 +83,11 @@ const Home = () => {
               paddingBottom: "15px",
             }}
           >
-            El hígado es un órgano de color marrón rojizo que tiene múltiples
-            funciones como regular la mayor parte de los niveles químicos de la
-            sangre y excretar un producto llamado bilis, que ayuda a descomponer
-            las grasas y las prepara para su posterior digestión y absorción.
+            El hígado es un órgano con múltiples funciones esenciales, como
+            regular la mayoría de los niveles químicos de la sangre, descomponer
+            las grasas y prepararlas para su digestión y absorción. Detectar
+            enfermedades hepáticas a tiempo es fundamental, por lo que es
+            importante informarse sobre algunas de ellas.
           </p>
           <button className="BotonAprende" onClick={handleLearn}>
             {" "}
@@ -104,11 +105,11 @@ const Home = () => {
       <section className="exploracion">
         <h1>Explora con total inmersión</h1>
         <Suspense fallback={<div>Cargando modelo 3d</div>}>
-            {LiverModel ? (
-              <LiverModel />
-            ) : (
-              <img src="/imagenes/fallo.png" alt="fallo" />
-            )}
+          {LiverModel ? (
+            <LiverModel />
+          ) : (
+            <img src="/imagenes/fallo.png" alt="fallo" />
+          )}
         </Suspense>
       </section>
 
