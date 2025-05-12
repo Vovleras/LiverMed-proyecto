@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import Hepatitis from "./models-3d/hepatitis";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import Lights from "./lights/lights";
+import Lights from "./lights/Lights";
 
 const Modelo1 = () => {
   return (

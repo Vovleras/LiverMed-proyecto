@@ -7,11 +7,46 @@ const Disease = () => {
   const { nombre } = useParams();
   const [info, setInfo] = useState(null);
   const [error, setError] = useState(false);
+  const [mostrarBoton, setMostrarBoton] = useState(true);
+  const [scrollTop, setScrollTop] = useState(false);
 
   useEffect(() => {
     import(`../../data/${nombre}.json`)
       .then((modulo) => setInfo(modulo.default))
       .catch(() => setError(true));
+
+    // Forzar el desplazamiento al inicio
+    window.scrollTo({ top: 0, behavior: "auto" });
+
+    // Evaluar la posición inicial del scroll
+    const evaluateScrollPosition = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // Si estamos al final de la página, activar "Subir"
+      if (scrollTop == 0) {
+        setScrollTop(false);
+      } else {
+        if (scrollTop + windowHeight >= documentHeight - 210) {
+          setScrollTop(true);
+        } else {
+          setScrollTop(false);
+        }
+      }
+      setMostrarBoton(true);
+    };
+
+    // Evaluar la posición inicial al cargar la página
+    evaluateScrollPosition();
+
+    // Agregar el evento de scroll
+    const handleScrollEvent = () => {
+      evaluateScrollPosition();
+    };
+
+    window.addEventListener("scroll", handleScrollEvent);
+    return () => window.removeEventListener("scroll", handleScrollEvent);
   }, [nombre]);
 
   if (error)
@@ -22,16 +57,22 @@ const Disease = () => {
   const Modelos = modelos[nombre] || {};
 
   const renderLista = (lista) =>
-    Array.isArray(lista)
-      ? (
-        <ul>
-          {lista.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
-      )
-      : null;
-      
+    Array.isArray(lista) ? (
+      <ul>
+        {lista.map((item, idx) => (
+          <li key={idx}>{item}</li>
+        ))}
+      </ul>
+    ) : null;
+
+  const handleClickScroll = () => {
+    if (scrollTop) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="enfermedad">
       <div className="nombreEnfermedad">{info.nombre}</div>
@@ -39,7 +80,11 @@ const Disease = () => {
       <section className="enfermedadColumna">
         <div className="modeloPal">
           <Suspense fallback={<div>Cargando modelo 1...</div>}>
-            {Modelos.Modelo1 ? <Modelos.Modelo1 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
+            {Modelos.Modelo1 ? (
+              <Modelos.Modelo1 />
+            ) : (
+              <img src="/imagenes/fallo.png" alt="fallo" />
+            )}
           </Suspense>
         </div>
         <div className="text">
@@ -54,26 +99,34 @@ const Disease = () => {
           <h2>Síntomas</h2>
           {info.sintomas?.parrafo1 && <p>{info.sintomas.parrafo1}</p>}
           {renderLista(info.sintomas.lista)}
-          {info.sintomas?.parrafo2 && <p>{info.sintomas.parrafo2}</p>}          
+          {info.sintomas?.parrafo2 && <p>{info.sintomas.parrafo2}</p>}
         </div>
         <div className="modeloSec">
           <Suspense fallback={<div>Cargando modelo 2...</div>}>
-            {Modelos.Modelo2 ? <Modelos.Modelo2 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
+            {Modelos.Modelo2 ? (
+              <Modelos.Modelo2 />
+            ) : (
+              <img src="/imagenes/fallo.png" alt="fallo" />
+            )}
           </Suspense>
-        </div>        
+        </div>
       </section>
 
       <section className="enfermedadRow">
         <div className="modeloSec">
           <Suspense fallback={<div>Cargando modelo 3...</div>}>
-            {Modelos.Modelo3 ? <Modelos.Modelo3 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
+            {Modelos.Modelo3 ? (
+              <Modelos.Modelo3 />
+            ) : (
+              <img src="/imagenes/fallo.png" alt="fallo" />
+            )}
           </Suspense>
         </div>
         <div className="text">
           <h2>Tratamiento</h2>
           {info.tratamiento?.parrafo1 && <p>{info.tratamiento.parrafo1}</p>}
           {renderLista(info.tratamiento.lista)}
-          {info.tratamiento?.parrafo2 && <p>{info.tratamiento.parrafo2}</p>}          
+          {info.tratamiento?.parrafo2 && <p>{info.tratamiento.parrafo2}</p>}
         </div>
       </section>
 
@@ -82,14 +135,37 @@ const Disease = () => {
           <h2>Prevención y cuidados</h2>
           {info.prevencion?.parrafo1 && <p>{info.prevencion.parrafo1}</p>}
           {renderLista(info.prevencion.lista)}
-          {info.prevencion?.parrafo2 && <p>{info.prevencion.parrafo2}</p>}          
+          {info.prevencion?.parrafo2 && <p>{info.prevencion.parrafo2}</p>}
         </div>
         <div className="modeloSec">
           <Suspense fallback={<div>Cargando modelo 4...</div>}>
-            {Modelos.Modelo4 ? <Modelos.Modelo4 /> : <img src="/imagenes/fallo.png" alt="fallo" />}
+            {Modelos.Modelo4 ? (
+              <Modelos.Modelo4 />
+            ) : (
+              <img src="/imagenes/fallo.png" alt="fallo" />
+            )}
           </Suspense>
         </div>
       </section>
+
+      {mostrarBoton && (
+        <div
+          className="position-fixed top-50 end-0 me-4 mt-5 pt-5 z-3"
+          style={{ zIndex: 1030 }}
+        >
+          <button onClick={handleClickScroll} className="btn btn-personalizado">
+            {scrollTop ? (
+              <>
+                Subir <i className="bi bi-arrow-up"></i>
+              </>
+            ) : (
+              <>
+                Ver más <i className="bi bi-arrow-down"></i>
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
