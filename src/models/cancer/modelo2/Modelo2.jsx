@@ -37,7 +37,11 @@ const Modelo2 = () => {
             scale={[3.2, 3.2, 3.2]}
             actionRef={actionRef}
           />
-          <Title title="¡Haz Click!" onClick={handlePain} />
+          <Title
+            title="¡Haz Click!"
+            onClick={handlePain}
+            position={[-0.3, 2.7, 0]}
+          />
         </Canvas>
         <div
           style={{
