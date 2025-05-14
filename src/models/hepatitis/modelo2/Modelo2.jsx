@@ -1,4 +1,5 @@
 import { Canvas } from '@react-three/fiber';
+import "./Modelo2.css";
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import Ojoicter from './models3d/Ojoicter'; // ✅ default import
 import Lights from './lights/Lights';
@@ -9,7 +10,7 @@ const Modelo2 = () => {
   return (
     <Canvas shadows>
       {/* Cámara */}
-      <PerspectiveCamera makeDefault position={[1, 0, 3.5]} />
+      <PerspectiveCamera makeDefault position={[1, 0, 3.5]} fov={75} />
 
       {/* Luces */}
       <Lights />
@@ -18,7 +19,7 @@ const Modelo2 = () => {
       <OrbitControls enableZoom enablePan enableRotate />
 
       {/* Modelo 3D */}
-      <Ojoicter scale={18} position={[1 -0.3, 0]} />
+      <Ojoicter scale={100} position={[0, -0.3, 0]} />
 
       {/* Plano para sombras */}
       <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>

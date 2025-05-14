@@ -8,7 +8,7 @@ export const images = [
   },
   {
     id: 2,
-    src: "https://p8.itc.cn/images01/20201112/aa0f6f221ed84785935d10cc7f5f4f3c.jpeg",
+    src: "/imagenes/fibrosis.png",
     alt: "Hepatitis",
     name: "Hepatitis",
     path: "/enfermedades/hepatitis",
