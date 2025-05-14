@@ -1,7 +1,7 @@
 hmtl,
 body,
 #root {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -24,4 +24,11 @@ a {
 
 p {
   font-size: medium;
+}
+
+@font-face {
+  font-family: "Unicorn";
+  src: url("/fonts/unicorn.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
