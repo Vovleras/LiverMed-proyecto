@@ -25,7 +25,7 @@ const Modelo2 = () => {
   return (
     <>
       <KeyboardControls map={map}>
-        <Canvas shadows={true} style={{ width: "550px", height: "780px" }}>
+        <Canvas shadows={true} style={{ width: "550px", height: "690px" }}>
           <Controls />
 
           <Recipient />
@@ -33,12 +33,11 @@ const Modelo2 = () => {
           <Staging />
           <PerspectiveCamera makeDefault position={[0, 2.2, 7]} />
           <Ictericia
-            position={[0, -3.6, 0]}
+            position={[0, -3.4, 0]}
             scale={[3.2, 3.2, 3.2]}
             actionRef={actionRef}
           />
-
-          <Title title={"¡Haz Click!"} onClick={handlePain} />
+          <Title title="¡Haz Click!" onClick={handlePain} />
         </Canvas>
         <div
           style={{
