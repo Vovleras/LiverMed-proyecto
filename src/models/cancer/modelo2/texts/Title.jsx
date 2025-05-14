@@ -1,19 +1,15 @@
 import { Html } from "@react-three/drei";
 import { useState } from "react";
 
-const Title = ({ title, onClick }) => {
+const Title = ({ title, onClick, position }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
     <Html
-      transform={false}
-      occlude={false}
+      position={position}
+      transform={true}
       style={{
-        position: "fixed",
-        top: "-310px",
-        left: "50%",
-        transform: "translateX(-50%)",
-        zIndex: 1000,
+        pointerEvents: "none",
       }}
     >
       <h1
@@ -23,7 +19,7 @@ const Title = ({ title, onClick }) => {
         style={{
           background: "transparent",
           color: hovered ? "#404a6e" : "#0d1533",
-          fontSize: "40px",
+          fontSize: "15px",
           fontWeight: "bold",
           pointerEvents: "auto",
           transition: "color 0.3s ease",
