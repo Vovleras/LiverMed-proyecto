@@ -16,7 +16,7 @@ const Title = ({ title, onClick }) => {
         zIndex: 1000,
       }}
     >
-      <button
+      <h1
         onClick={onClick}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -36,7 +36,7 @@ const Title = ({ title, onClick }) => {
         }}
       >
         {title}
-      </button>
+      </h1>
     </Html>
   );
 };
