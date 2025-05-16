@@ -8,11 +8,7 @@ export const images = [
   },
   {
     id: 2,
-<<<<<<< Updated upstream
     src: "/imagenes/fibrosis.png",
-=======
-    src: "imagenes/fibrosis.png",
->>>>>>> Stashed changes
     alt: "Hepatitis",
     name: "Hepatitis",
     path: "/enfermedades/hepatitis",

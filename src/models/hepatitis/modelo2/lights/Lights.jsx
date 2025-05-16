@@ -48,8 +48,7 @@ const Lights = () => {
   );
 };
 
-<<<<<<< Updated upstream
+
 export default Lights;
-=======
-export default Lights;
->>>>>>> Stashed changes
+
+
