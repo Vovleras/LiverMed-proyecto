@@ -5,13 +5,7 @@ const Title = ({ title, onClick, position }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Html
-      position={position}
-      transform={true}
-      style={{
-        pointerEvents: "none",
-      }}
-    >
+    <Html fullscreen zIndexRange={100} position={position} transform={true}>
       <h1
         onClick={onClick}
         onMouseEnter={() => setHovered(true)}
@@ -20,15 +14,12 @@ const Title = ({ title, onClick, position }) => {
           background: "transparent",
           color: hovered ? "#404a6e" : "#0d1533",
           fontSize: "15px",
-          fontWeight: "bold",
+
           pointerEvents: "auto",
-          transition: "color 0.3s ease",
-          padding: "10px",
           fontFamily: "'Unicorn', sans-serif",
+
           border: "none",
-          minWidth: "250px",
-          whiteSpace: "nowrap",
-          textAlign: "center",
+          zIndex: 10,
         }}
       >
         {title}
