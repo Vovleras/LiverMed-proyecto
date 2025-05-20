@@ -41,6 +41,7 @@ const Modelo2 = () => {
             title="¡Haz Click!"
             onClick={handlePain}
             position={[-0.3, 2.7, 0]}
+            className="title"
           />
         </Canvas>
         <div
