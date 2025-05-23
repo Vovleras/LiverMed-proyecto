@@ -8,8 +8,7 @@ import Recipient from "./models3d/Recipient";
 import Staging from "./staging/Staging";
 import Title from "./texts/Title";
 import { useRef } from "react";
-
-import "./Modelo2.css";
+import TitleAd from "./texts/TitleAd";
 
 const Modelo2 = () => {
   const map = useMemo(() => [{ name: "Pain", keys: ["KeyP"] }], []);
@@ -43,8 +42,12 @@ const Modelo2 = () => {
             position={[-0.3, 2.7, 0]}
             className="title"
           />
+          <TitleAd
+            title="💡 Tecla 'P' para animar el modelo"
+            position={[1.27, -2.98, 1]}
+          />
         </Canvas>
-        <div
+        {/* <div
           style={{
             position: "absolute",
             bottom: "10px",
@@ -58,7 +61,7 @@ const Modelo2 = () => {
           }}
         >
           💡 Tecla 'P' para animar el modelo
-        </div>
+        </div> */}
       </KeyboardControls>
     </>
   );
