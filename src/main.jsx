@@ -7,6 +7,7 @@ import Layout from "./layout/Layout.jsx";
 import Disease from "./pages/disease/Disease.jsx";
 import Quiz from "./pages/quiz/Quiz.jsx";
 import Us from "./pages/sobreNosotros/Us.jsx";
+import Login from "./pages/login/Login.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/enfermedades/:nombre" element={<Disease />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/nosotros" element={<Us />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Layout>
   </BrowserRouter>
