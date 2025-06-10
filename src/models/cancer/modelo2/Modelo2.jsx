@@ -13,6 +13,7 @@ import TitleAd from "./texts/TitleAd";
 const Modelo2 = () => {
   const map = useMemo(() => [{ name: "Pain", keys: ["KeyP"] }], []);
   const actionRef = useRef(null);
+  const audioRef = useRef();
 
   const handlePain = () => {
     if (actionRef.current) {
@@ -34,6 +35,7 @@ const Modelo2 = () => {
             position={[0, -3.4, 0]}
             scale={[3.2, 3.2, 3.2]}
             actionRef={actionRef}
+            audioRef={audioRef}
           />
           <Title
             title="¡Haz Click!"
