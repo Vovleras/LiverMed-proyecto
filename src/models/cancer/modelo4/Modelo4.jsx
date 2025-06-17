@@ -49,9 +49,9 @@ const Modelo4 = () => {
         <Canvas shadows={true} style={{ width: "550px", height: "700px" }}>
           <PerspectiveCamera makeDefault position={[0, 0, 7]} />
           <Controls />
-          <Lights />
+          <Lights receiveShadow />
           <Recipient />
-          <VaccineAnimation />
+          <VaccineAnimation receiveShadow />
           <Title3D title={"¡Vacunate!"} />
           <Title2D title={"Previene"} />
           <TitleAd
