@@ -61,7 +61,10 @@ const Footer = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="text-decoration-none text-dark">
+                <NavLink
+                  to="/nosotros"
+                  className="text-decoration-none text-dark"
+                >
                   Sobre Nosotros
                 </NavLink>
               </li>
@@ -72,7 +75,7 @@ const Footer = () => {
             <h4>Pruebas</h4>
             <ul className="list-unstyled d-flex flex-column gap-2 ">
               <li>
-                <NavLink to="/" className="text-decoration-none text-dark">
+                <NavLink to="/quiz" className="text-decoration-none text-dark">
                   Quiz
                 </NavLink>
               </li>
