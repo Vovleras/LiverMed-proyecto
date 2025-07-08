@@ -1,0 +1,51 @@
+.modelo2-cirrosis {
+    border-radius: 1rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    width: 35vw;
+    height: 75vh;
+}
+
+.modelo2-cirrosis.expanded {
+    position: fixed;
+    top: 17vh;
+    left: 5vw;
+    width: 90vw;
+    height: 80vh;
+    z-index: 1000;
+    background-color: #b1b6c8;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 20px rgba(177, 182, 200,0.5);
+}
+
+.expand-button {
+    border-radius: 0.4rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    padding: 6px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #b1b6c8;
+    border: 0.5px solid rgba(177, 182, 200, 0.125);
+}
+
+.extra-panel {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(255,255,255,0.9);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1100;
+}
+
+.extra-panel > p {
+  max-width: 27vw;
+  text-align: left;
+  color: #0d1533;
+  font-size: 2vh;
+}
