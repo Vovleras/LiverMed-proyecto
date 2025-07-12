@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import Cancer from "./CancerHcc";
 
-const AnimateModel = ({ isAnimating }) => {
+const AnimateModel = ({ isAnimating, onClick }) => {
   const groupRef = useRef();
 
   useFrame((state, delta) => {
@@ -13,7 +13,12 @@ const AnimateModel = ({ isAnimating }) => {
   });
 
   return (
-    <group ref={groupRef}>
+    <group
+      ref={groupRef}
+      onClick={onClick}
+      onPointerOver={() => (document.body.style.cursor = "pointer")}
+      onPointerOut={() => (document.body.style.cursor = "default")}
+    >
       <Cancer position={[0, 0.3, 0]} scale={[4, 4, 4]} />
     </group>
   );
