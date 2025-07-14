@@ -28,7 +28,7 @@ const Ojoicter = () => {
     <primitive
       ref={modelRef}
       object={scene}
-      position={[-1.5, 0.5, 1]}
+      position={[0, 0.5, 0]}
       scale={2} // Aumenta el tamaño del modelo al doble
     />
   );
