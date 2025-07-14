@@ -31,7 +31,7 @@ const Modelo3 = () => {
       <PilllsAnimation />
       <Recipient />
       <SoftShadows size={20} samples={10} focus={0.9} />
-      <Title title={"Cuidado Integral"} />
+      <Title title={"Mas recomendable"} />
       <Title2D title={"Colestiramina oral"} />
     </Canvas>
   );
