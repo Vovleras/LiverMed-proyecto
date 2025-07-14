@@ -7,7 +7,7 @@ import {
 import { useMemo, useRef } from "react";
 import Ojoicter from "../modelo2/models3d/Ojoicter"; // ← Corrección aquí
 import Lights from "../modelo2/lights/Lights";
-import Controls from "../modelo2/controls/controls";
+import Controls from "../modelo2/controls/Controls";
 import Title from "../modelo2/texts/Title";
 import TitleAd from "../modelo2/texts/TitleAd";
 import Recipient from "../modelo2/models3d/Recipient";
@@ -60,11 +60,7 @@ const Modelo2 = () => {
         <Recipient />
 
         {/* Títulos */}
-        <Title
-          title="¡Haz Click!"
-          onClick={handlePain}
-          position={[0, 2, 0]}
-        />
+        <Title title="¡Haz Click!" onClick={handlePain} position={[0, 2, 0]} />
         <TitleAd
           title="💡 Tecla 'T' para animar el modelo"
           position={[0, -1, 0]}
