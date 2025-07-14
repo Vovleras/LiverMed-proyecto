@@ -5,13 +5,13 @@ import {
   KeyboardControls,
 } from "@react-three/drei";
 import { useMemo, useRef } from "react";
-import Ojoicter from "../modelo2/models3d/Ojoicter"; // ← Corrección aquí
+import Ojoicter from "../modelo2/models3d/Ojoicter";
 import Lights from "../modelo2/lights/Lights";
 import Controls from "../modelo2/controls/Controls";
 import Title from "../modelo2/texts/Title";
 import TitleAd from "../modelo2/texts/TitleAd";
 import Recipient from "../modelo2/models3d/Recipient";
-import Staging from "../modelo2/staging/staging";
+import Staging from "./staging/Staging";
 
 const Modelo2 = () => {
   const actionRef = useRef(null);
