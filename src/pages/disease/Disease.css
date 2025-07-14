@@ -70,9 +70,9 @@
 
 .text p {
   text-align: justify;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #333;
-  max-width: 600px;
+  max-width: 670px;
   margin: 0 auto 1.3rem;
 }
 
@@ -85,7 +85,7 @@
 .text li {
   margin-bottom: 0.5rem;
   color: #333;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
 }
 

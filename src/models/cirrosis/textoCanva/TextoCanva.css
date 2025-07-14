@@ -1,0 +1,12 @@
+.VentanaInformacion {
+    height: fit-content;
+    backdrop-filter: blur(18px) saturate(176%);
+    -webkit-backdrop-filter: blur(18px) saturate(176%);
+    background-color: rgba(255, 255, 255, 0.39);
+    border-radius: 4vw;
+    border: 1vw solid rgba(177, 182, 200, 0.125);
+}
+.VentanaInformacion > p {
+    padding: 1vh;
+    line-height: 1.2    ;
+}
