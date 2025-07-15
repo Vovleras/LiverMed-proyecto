@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   padding: 6rem 2rem;
   background-color: #d3d8ea;
   gap: 3rem;
@@ -16,7 +16,7 @@
   flex: 1;
   min-width: 300px;
   max-width: 600px;
-  padding-top: 3rem; 
+  padding-top: 3rem;
 }
 
 .about-text h1 {
@@ -25,6 +25,7 @@
   margin-bottom: 0.5rem;
   text-align: left;
   word-break: break-word;
+  font-weight: 700;
 }
 
 .about-text h3 {
@@ -33,6 +34,7 @@
   margin-bottom: 1.5rem;
   font-weight: normal;
   text-align: left;
+  
 }
 
 .about-text p {
@@ -50,7 +52,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem; 
+  padding-top: 5rem;
 }
 
 .about-image img {
