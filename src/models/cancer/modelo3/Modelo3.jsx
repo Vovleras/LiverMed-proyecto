@@ -6,23 +6,8 @@ import Lights from "./lights/Lights";
 import Recipient from "./models3d/Recipient";
 import { SoftShadows } from "@react-three/drei";
 import Title from "./text/Title";
-import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
 import Title2D from "./text/Title2D";
-
-const PillsAnimation = (props) => {
-  const ref = useRef();
-  useFrame(({ clock }) => {
-    if (ref.current) {
-      ref.current.position.y = Math.sin(clock.getElapsedTime()) * 0.4; // Rebota en Y
-    }
-  });
-  return (
-    <group ref={ref} {...props}>
-      <Pills scale={[23, 23, 23]} position={[0, -0.7, 0]} recieveShadow />
-    </group>
-  );
-};
+import PillsAnimation from "./models3d/PillsAnimation";
 
 const Modelo3 = () => {
   return (

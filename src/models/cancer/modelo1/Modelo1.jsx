@@ -1,50 +1,18 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import {
-  PerspectiveCamera,
-  KeyboardControls,
-  useKeyboardControls,
-} from "@react-three/drei";
-import { useRef, useMemo, useState, useEffect } from "react";
-import Cancer from "./models-3d/CancerHcc";
+import { Canvas } from "@react-three/fiber";
+import { PerspectiveCamera, KeyboardControls } from "@react-three/drei";
+import { useMemo, useState } from "react";
 import Lights from "./lights/Lights";
 import Recipient from "./models-3d/Recipient";
 import Controls from "./controls/Controls";
-
-const AnimateModel = ({ isAnimating }) => {
-  const groupRef = useRef();
-
-  useFrame((state, delta) => {
-    if (groupRef.current && isAnimating) {
-      groupRef.current.rotation.y += delta * 0.1;
-    }
-  });
-
-  return (
-    <group ref={groupRef}>
-      <Cancer position={[0, 0.3, 0]} scale={[4, 4, 4]} />
-    </group>
-  );
-};
-
-const KeyboardController = ({ setIsAnimating }) => {
-  const pressed = useKeyboardControls((state) => state.animation);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.code === "KeyS") {
-        setIsAnimating((prev) => !prev);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [setIsAnimating]);
-
-  return null;
-};
+import AnimateModel from "./models-3d/AnimateModel";
+import KeyboardController from "./controls/KeyBoardController";
+import { useCallback } from "react";
 
 const Modelo1 = () => {
   const [isAnimating, setIsAnimating] = useState(true);
+  const clickAnimation = useCallback(() => {
+    setIsAnimating((prev) => !prev);
+  }, []);
 
   const map = useMemo(
     () => [
@@ -61,7 +29,7 @@ const Modelo1 = () => {
       <Canvas shadows={true}>
         <PerspectiveCamera makeDefault position={[1, 2, 5]} />
         <Lights />
-        <AnimateModel isAnimating={isAnimating} />
+        <AnimateModel isAnimating={isAnimating} onClick={clickAnimation} />
         <Controls />
         <Recipient />
         <KeyboardController setIsAnimating={setIsAnimating} />
@@ -80,7 +48,8 @@ const Modelo1 = () => {
           zIndex: 10,
         }}
       >
-        💡 Tecla 'S' para {isAnimating ? "detener" : "reanudar"} el modelo
+        💡 Tecla 'S' o 👆🏻 click sobre el modelo <br />
+        para {isAnimating ? "detenerlo" : "reanudarlo"}
       </div>
     </KeyboardControls>
   );

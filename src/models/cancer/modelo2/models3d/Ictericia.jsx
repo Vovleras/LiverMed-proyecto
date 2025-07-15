@@ -1,10 +1,16 @@
 import React, { useRef, useState } from "react";
-import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
+import {
+  useGLTF,
+  useAnimations,
+  useKeyboardControls,
+  PositionalAudio,
+} from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useCallback } from "react";
 
-export function Ictericia({ actionRef, ...props }) {
+export function Ictericia({ actionRef, audioRef, ...props }) {
   const group = useRef();
+
   const { nodes, materials, animations } = useGLTF(
     "/models-3d/models-cancer/ictericia.glb"
   );
@@ -43,8 +49,18 @@ export function Ictericia({ actionRef, ...props }) {
 
       let timeoutId;
       if (currentAction === "Pain") {
+        if (audioRef && audioRef.current) {
+          audioRef.current.currentTime = 0;
+          audioRef.current.play();
+          audioRef.current.setVolume?.(10);
+        }
         timeoutId = setTimeout(() => {
           setCurrentAction("Idle");
+
+          if (audioRef && audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+          }
         }, 2000);
       }
 
@@ -53,7 +69,7 @@ export function Ictericia({ actionRef, ...props }) {
         if (timeoutId) clearTimeout(timeoutId);
       };
     }
-  }, [actions, currentAction]);
+  }, [actions, currentAction, audioRef]);
 
   const handleAvatar = useCallback(
     (e) => {
@@ -153,6 +169,12 @@ export function Ictericia({ actionRef, ...props }) {
           <primitive object={nodes.Hips} />
         </group>
       </group>
+      <PositionalAudio
+        ref={audioRef}
+        loop
+        url="/sounds/cancer/pain.mp3"
+        distance={15}
+      />
     </group>
   );
 }
