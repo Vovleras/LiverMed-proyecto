@@ -1,0 +1,9 @@
+.modelo3-cirrosis {
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(177, 182, 200,0.5);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    width: 35vw;
+    height: 75vh;
+}

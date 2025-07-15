@@ -1,6 +1,6 @@
 .modelo2-cirrosis {
     border-radius: 1rem;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(177, 182, 200,0.5);
     position: relative;
     transition: all 0.3s ease;
     overflow: hidden;
