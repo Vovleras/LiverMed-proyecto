@@ -86,21 +86,51 @@ const Footer = () => {
         <div className="d-flex justify-content-between text-lg-start">
           <p>© 2025 LiverMed</p>
           <div className="d-flex gap-2 ">
-            <NavLink to="/" className="text-dark">
+            <a
+              href="https://www.instagram.com/"
+              to="/"
+              className="text-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-instagram fs-10 me-3"></i>
-            </NavLink>
-            <NavLink to="/" className="text-dark">
+            </a>
+            <a
+              href="https://www.facebook.com/?locale=es_LA"
+              to="/"
+              className="text-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-facebook fs-10 me-3"></i>
-            </NavLink>
-            <NavLink to="/" className="text-dark">
+            </a>
+            <a
+              href="https://x.com/?lang=es"
+              to="/"
+              className="text-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-twitter fs-10 me-3"></i>
-            </NavLink>
-            <NavLink to="/" className="text-dark">
+            </a>
+            <a
+              href="https://co.linkedin.com/"
+              to="/"
+              className="text-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-linkedin fs-10 me-3"></i>
-            </NavLink>
-            <NavLink to="/" className="text-dark">
+            </a>
+            <a
+              href="https://www.youtube.com/?app=desktop&hl=es"
+              to="/"
+              className="text-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bi bi-youtube fs-10"></i>
-            </NavLink>
+            </a>
           </div>
         </div>
       </div>

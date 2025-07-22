@@ -2,8 +2,26 @@ import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./Header.css";
+import useAuthStore from "../../store/use-auth-store";
+
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const { userLooged, logout } = useAuthStore();
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Error al cerrar sesión:", error);
+        navigate("/quiz");
+      });
+  };
+
   return (
     <nav
       style={{ backgroundColor: "#b1b6c8" }}
@@ -52,7 +70,6 @@ const Header = () => {
               >
                 Enfermedades
               </span>
-
               <ul className="dropdown-menu dropdown-menu-custom">
                 <li>
                   <NavLink
@@ -96,9 +113,15 @@ const Header = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/login" className="btn btn-custom">
-                Iniciar Sesión
-              </NavLink>
+              {userLooged ? (
+                <button onClick={handleLogout} className="btn btn-custom">
+                  Cerrar Sesión
+                </button>
+              ) : (
+                <NavLink to="/login" className="btn btn-custom">
+                  Iniciar Sesión
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>
