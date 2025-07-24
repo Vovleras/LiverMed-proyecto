@@ -1,6 +1,7 @@
 import { RigidBody } from "@react-three/rapier";
 import { useState, useEffect } from "react";
 import { Html } from "@react-three/drei";
+import { Text } from "@react-three/drei";
 
 const Target = ({
   position = [0, 1, -5],
@@ -62,9 +63,9 @@ const Target = ({
     }
     if (disabled) {
       console.log("Target deshabilitado, color gris");
-      return "#CCCCCC";
+      return "#B1B6C8";
     }
-    return "#FF5722";
+    return "#404A6E";
   };
 
   return (
@@ -83,12 +84,16 @@ const Target = ({
         onClick={handleClick}
         scale={hover ? 1.1 : 1}
       >
-        <boxGeometry args={[2, 1, 0.2]} />
-        <meshStandardMaterial color={getColor()} />
-        <Html position={position} transform>
+        <cylinderGeometry args={[0.9, 0.9, 0.3, 30]} />
+        <meshStandardMaterial
+          color={getColor()}
+          roughness={hover ? 0.1 : 0.3}
+          metalness={hover ? 0.3 : 0.1}
+          emissive={hover ? "#111" : "#000"}
+        />
+        {/* <Html position={position} transform>
           <div
             style={{
-              background: "rgba(255,255,255,0.9)",
               borderRadius: "6px",
               padding: "6px 10px",
               textAlign: "center",
@@ -96,14 +101,32 @@ const Target = ({
               fontWeight: "bold",
               width: "150px",
               color: "#333",
-              boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+              boxShadow: "0 2px 6px rgba(175,190,243,0.5)",
               opacity: disabled ? 0.5 : 1,
+              marginBottom: "70px",
+              zIndex: -1,
             }}
           >
             {answerText}
           </div>
-        </Html>
+        </Html> */}
       </mesh>
+      <Text
+        position={[position[0], position[1] + 1, position[2]]}
+        fontSize={0.3}
+        maxWidth={2}
+        lineHeight={1.4}
+        letterSpacing={0.12}
+        textAlign="center"
+        font="/fonts/unicorn.ttf"
+        anchorX="center"
+        anchorY="middle"
+        color={disabled ? "#666" : "#fff"}
+        outlineWidth={0.01}
+        outlineColor="#0d1533"
+      >
+        {answerText}
+      </Text>
     </RigidBody>
   );
 };

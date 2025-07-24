@@ -23,7 +23,7 @@ export const QUESTIONS = [
     options: [
       {
         id: "1",
-        label: "Ascitis (acumulación de líquido en el abdomen)",
+        label: "Ascitis",
         correct: true,
       },
       { id: "2", label: "Dolor de oído", correct: false },
@@ -32,12 +32,11 @@ export const QUESTIONS = [
   },
   {
     id: 4,
-    question:
-      "¿Qué factor de riesgo está asociado al hígado graso no alcohólico?",
+    question: "¿Qué tratamiento se utiliza para el hígado graso?",
     options: [
-      { id: "1", label: "Obesidad y resistencia a la insulina", correct: true },
-      { id: "2", label: "Falta de exposición al sol", correct: false },
-      { id: "3", label: "Alergia al polen", correct: false },
+      { id: "1", label: "No hay tratamiento", correct: true },
+      { id: "2", label: "Medicación", correct: false },
+      { id: "3", label: "Cirugía", correct: false },
     ],
   },
   {
