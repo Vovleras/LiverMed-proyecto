@@ -67,7 +67,7 @@ const Ball = forwardRef(({ position = [0, 1, 4] }, ref) => {
     >
       <mesh castShadow>
         <sphereGeometry args={[0.3, 32, 32]} />
-        <meshStandardMaterial color="blue" />
+        <meshStandardMaterial color="#AFBEF3" />
       </mesh>
     </RigidBody>
   );

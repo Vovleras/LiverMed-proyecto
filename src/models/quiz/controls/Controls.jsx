@@ -2,7 +2,7 @@ import { OrbitControls } from "@react-three/drei";
 
 const Controls = () => {
   return (
-    <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
+    <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
   );
 };
 
