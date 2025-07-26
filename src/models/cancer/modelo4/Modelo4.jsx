@@ -64,15 +64,14 @@ const Modelo4 = () => {
       <div
         style={{
           position: "absolute",
-          bottom: "20px",
+          top: "96%",
+          left: "-90%",
 
-          left: "-550px",
           backgroundColor: "rgba(0, 0, 0, 0.6)",
           color: "white",
           padding: "0.2rem 0.2rem",
           borderRadius: "0.5rem",
           fontSize: "0.8rem",
-          zIndex: 10,
         }}
       >
         💡 Tecla 'V' para descargar esquema de vacunación

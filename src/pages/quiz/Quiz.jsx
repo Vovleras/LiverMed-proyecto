@@ -156,7 +156,8 @@ const Quiz = () => {
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          marginTop: "30px",
+          marginTop: "4%",
+          overflowY: "auto",
         }}
       >
         <div
@@ -277,7 +278,8 @@ const Quiz = () => {
             textTransform: "uppercase",
             letterSpacing: "1px",
             zIndex: 1,
-            marginTop: "20px",
+            marginTop: "5%",
+            flexWrap: "wrap",
           }}
           onMouseEnter={(e) => {
             e.target.style.transform = "translateY(-3px) scale(1.05)";
@@ -440,16 +442,20 @@ const Quiz = () => {
     <div
       style={{
         display: "flex",
-        height: "80vh",
-        overflow: "hidden",
-        marginBottom: "30px",
-        marginRight: "0px",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "flex-start",
+        width: "100%",
         marginTop: "125px",
+        padding: "10px",
+        gap: "0px",
+        marginBottom: "5%",
       }}
     >
       <div
         style={{
-          width: "400px",
+          width: "100%",
+          maxWidth: "400px",
           background: "linear-gradient(135deg, #1E2747 0%, #404A6E 100%)",
           display: "flex",
           flexDirection: "column",
@@ -458,7 +464,10 @@ const Quiz = () => {
           color: "white",
           boxShadow: "5px 0 15px rgba(0,0,0,0.1)",
           borderRadius: "15px 0px 0px 15px",
-          marginBottom: "2px",
+          flexShrink: 0,
+          height: "80vh",
+          overflowY: "auto",
+          maxHeight: "calc(100vh - 10px)",
         }}
       >
         <div>
@@ -556,6 +565,7 @@ const Quiz = () => {
               letterSpacing: "1px",
               width: "50%",
               marginTop: "20px",
+              marginBottom: "10%",
             }}
             onMouseEnter={(e) => {
               e.target.style.transform = "translateY(-2px)";
@@ -604,20 +614,22 @@ const Quiz = () => {
         </div>
       </div>
 
-      {/* Panel derecho - Canvas/Targets */}
       <div
         style={{
-          flex: "1",
+          flex: 1,
+          minWidth: "300px",
+          maxWidth: "110vh",
           background: "linear-gradient(135deg, #d2d5dfff 0%, #757E9D 80%)",
           borderRadius: "0px 15px 15px 0px",
           position: "relative",
+          overflow: "hidden",
         }}
       >
         <Canvas
           shadows
           style={{
-            height: "100vh",
-            width: "110vh",
+            height: "80vh",
+            width: "100%",
           }}
           camera={{ position: [0, 4, 10], fov: 50 }}
         >
@@ -631,13 +643,13 @@ const Quiz = () => {
           <Physics gravity={[0, -9.81, 0]} debug={false}>
             <Controls />
             <Floor />
-            <Ball ref={ballRef} position={[0, 1, 3.5]} />
+            <Ball ref={ballRef} position={[0, 0, 4.7]} />
 
             {currentQuestion.options.map((option, index) => {
               const positions = [
-                [-3.5, 1, -2],
-                [3.5, 1, -2],
-                [0, 1, -4],
+                [-3.5, 1, 1],
+                [3.5, 1, 1],
+                [0, 1, -1],
               ];
 
               return (
