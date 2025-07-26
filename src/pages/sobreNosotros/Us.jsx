@@ -1,7 +1,11 @@
 import React from "react";
 import "./Us.css";
+import { useEffect } from "react";
 
 const Us = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="about-container">
       <div className="about-text">
