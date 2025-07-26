@@ -8,7 +8,7 @@ import Target from "../../models/quiz/models3d/Target";
 import { QUESTIONS } from "../../data/questions";
 import useAuthStore from "../../store/use-auth-store";
 import higadoIcono from "/imagenes/higadoIcono.png";
-import trofeo from "/imagenes/trofeo.png";
+
 import tutoria from "/imagenes/tutoria.png";
 
 const Quiz = () => {
@@ -29,6 +29,10 @@ const Quiz = () => {
   } = useAuthStore();
 
   const currentQuestion = QUESTIONS[currentQuestionIndex];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     if (isQuizComplete) {
