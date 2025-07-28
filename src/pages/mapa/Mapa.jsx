@@ -18,7 +18,7 @@ const Mapa = () => {
 
         <ul className="list-unstyled d-flex flex-column gap-2  text-start ps-custom">
           <li>
-            <NavLink to="/">Inicio</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
         </ul>
         <h2>Enfermedades</h2>
@@ -40,6 +40,12 @@ const Mapa = () => {
         <ul className="list-unstyled d-flex flex-column gap-2 text-start ps-custom">
           <li>
             <NavLink to="/nosotros">Sobre Nosotros</NavLink>
+          </li>
+        </ul>
+        <h2>Pruebas</h2>
+        <ul className="list-unstyled d-flex flex-column gap-2  text-start ps-custom">
+          <li>
+            <NavLink to="/Quiz">Quiz</NavLink>
           </li>
         </ul>
         <h2>Autenticación</h2>
