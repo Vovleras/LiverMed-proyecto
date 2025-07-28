@@ -5,7 +5,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; // Agregar updateDoc
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../firebase.config";
 
 const provider = new GoogleAuthProvider();
@@ -135,7 +135,6 @@ const useAuthStore = create((set, get) => {
           const userData = userSnap.data();
           const currentAnswers = userData.Respuestas || [];
 
-          // Actualizar solo el índice de la respuesta
           currentAnswers[questionIndex] = selectedOptionIndex;
 
           await updateDoc(userRef, {
