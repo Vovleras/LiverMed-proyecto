@@ -1,21 +1,31 @@
 import { create } from "zustand";
-import { onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; // Agregar updateDoc
 import { auth, db } from "../firebase.config";
 
 const provider = new GoogleAuthProvider();
 
-const useAuthStore = create((set) => {
+const useAuthStore = create((set, get) => {
   const observeAuthState = () => {
     onAuthStateChanged(auth, (user) => {
-      user ? set({ userLooged: user }) : set({ userLooged: null });
+      if (user) {
+        set({ userLooged: user, isLoading: false });
+      } else {
+        set({ userLooged: null, isLoading: false });
+      }
     });
   };
+
   observeAuthState();
 
   return {
     userLooged: null,
+    isLoading: true,
 
     loginGoogleWithPopUp: async () => {
       try {
@@ -41,6 +51,108 @@ const useAuthStore = create((set) => {
         return result;
       } catch (error) {
         console.error("Error logging in:", error);
+      }
+    },
+
+    getCurrentQuestion: async () => {
+      const { userLooged } = get();
+      if (!userLooged) return 0;
+
+      try {
+        const userRef = doc(db, "Usuarios", userLooged.uid);
+        const userSnap = await getDoc(userRef);
+        return userSnap.exists() ? userSnap.data().PreguntaActual || 0 : 0;
+      } catch (error) {
+        console.error("Error obteniendo pregunta actual:", error);
+        return 0;
+      }
+    },
+    updateCurrentQuestion: async (questionIndex) => {
+      const { userLooged } = get();
+      if (!userLooged) return;
+
+      try {
+        const userRef = doc(db, "Usuarios", userLooged.uid);
+        await updateDoc(userRef, {
+          PreguntaActual: questionIndex,
+        });
+
+        console.log("Pregunta actual actualizada a:", questionIndex);
+      } catch (error) {
+        console.error("Error actualizando pregunta actual:", error);
+      }
+    },
+
+    resetScore: async () => {
+      const { userLooged } = get();
+      if (!userLooged) return;
+      try {
+        const userRef = doc(db, "Usuarios", userLooged.uid);
+        await updateDoc(userRef, {
+          Puntuación: 0,
+          Respuestas: [],
+          PreguntaActual: 0,
+        });
+        console.log("Información reiniciada correctamente.");
+      } catch (error) {
+        console.error("Error reiniciando información:", error);
+      }
+    },
+
+    getScore: async () => {
+      const { userLooged } = get();
+      if (!userLooged) return 0;
+
+      try {
+        // Obtener datos desde Firestore
+        const userRef = doc(db, "Usuarios", userLooged.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (userSnap.exists()) {
+          const userData = userSnap.data();
+          const puntuacion = userData.Puntuación || 0;
+          console.log("Puntuación obtenida correctamente:", puntuacion);
+          return puntuacion;
+        } else {
+          console.log("Usuario no encontrado en Firestore");
+          return 0;
+        }
+      } catch (error) {
+        console.error("Error al obtener puntuación:", error);
+        return 0;
+      }
+    },
+
+    saveUserAnswer: async (questionIndex, selectedOptionIndex, isCorrect) => {
+      const { userLooged } = get();
+      if (!userLooged) return;
+
+      try {
+        const userRef = doc(db, "Usuarios", userLooged.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (userSnap.exists()) {
+          const userData = userSnap.data();
+          const currentAnswers = userData.Respuestas || [];
+
+          // Actualizar solo el índice de la respuesta
+          currentAnswers[questionIndex] = selectedOptionIndex;
+
+          await updateDoc(userRef, {
+            Respuestas: currentAnswers,
+
+            Puntuación: userData.Puntuación + (isCorrect ? 1 : 0),
+          });
+
+          console.log("Respuesta guardada:", {
+            questionIndex,
+            selectedOptionIndex,
+            isCorrect,
+            nuevaPuntuacion: userData.Puntuación + (isCorrect ? 1 : 0),
+          });
+        }
+      } catch (error) {
+        console.error("Error guardando respuesta:", error);
       }
     },
 

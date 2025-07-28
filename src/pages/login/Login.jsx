@@ -1,16 +1,27 @@
 import "./Login.css";
 import useAuthStore from "../../store/use-auth-store";
-import { useNavigate } from "react-router";
-import { useCallback } from "react";
+import { useNavigate, useLocation } from "react-router-dom"; // Agregar useLocation
+import { useCallback, useEffect } from "react";
 
 const Login = () => {
-  const { loginGoogleWithPopUp } = useAuthStore();
+  const { loginGoogleWithPopUp, userLooged } = useAuthStore(); // Agregar userLooged
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
   const handleLogin = useCallback(() => {
-    loginGoogleWithPopUp()
-      .then(() => navigate("/"))
-      .catch(() => navigate("/login"));
-  }, [loginGoogleWithPopUp, navigate]);
+    loginGoogleWithPopUp().catch((error) => {
+      console.error("Error en login:", error);
+    });
+  }, [loginGoogleWithPopUp]);
+
+  useEffect(() => {
+    if (userLooged) {
+      navigate(from, { replace: true });
+    }
+  }, [userLooged, navigate, from]);
+
   return (
     <>
       <div className="medio-circulo"></div>
@@ -23,7 +34,7 @@ const Login = () => {
           onClick={handleLogin}
         >
           <img
-            src="/imagenes/google.png" // Cambia la ruta por la de tu imagen
+            src="/imagenes/google.png"
             style={{
               width: "24px",
               height: "24px",
@@ -31,7 +42,7 @@ const Login = () => {
               verticalAlign: "middle",
             }}
           />
-          Inicar Sesión con Google
+          {"Iniciar Sesión con Google"}
         </button>
       </div>
     </>

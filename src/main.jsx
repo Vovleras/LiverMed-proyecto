@@ -8,6 +8,9 @@ import Disease from "./pages/disease/Disease.jsx";
 import Quiz from "./pages/quiz/Quiz.jsx";
 import Us from "./pages/sobreNosotros/Us.jsx";
 import Login from "./pages/login/Login.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import Mapa from "./pages/mapa/Mapa.jsx";
+
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
@@ -19,8 +22,16 @@ createRoot(document.getElementById("root")).render(
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/enfermedades/:nombre" element={<Disease />} />
-              <Route path="/quiz" element={<Quiz />} />
+              <Route
+                path="/quiz"
+                element={
+                  <ProtectedRoute>
+                    <Quiz />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/nosotros" element={<Us />} />
+              <Route path="/mapa" element={<Mapa />} />
             </Routes>
           </Layout>
         }
