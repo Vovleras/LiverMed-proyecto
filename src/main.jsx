@@ -23,19 +23,12 @@ createRoot(document.getElementById("root")).render(
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/enfermedades/:nombre" element={<Disease />} />
+              <Route path="/resultados" element={<Resultados />} />
               <Route
                 path="/quiz"
                 element={
                   <ProtectedRoute>
                     <Quiz />                    
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/resultados"
-                element={
-                  <ProtectedRoute>
-                    <Resultados />                    
                   </ProtectedRoute>
                 }
               />

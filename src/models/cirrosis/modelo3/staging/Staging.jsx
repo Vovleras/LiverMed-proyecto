@@ -1,5 +1,6 @@
 import { Environment, OrbitControls, Shadow } from "@react-three/drei";
 import Piso from './Piso'
+import TextoM2 from '../text/Text';
 
 const Staging = () => {
     return (
@@ -13,6 +14,8 @@ const Staging = () => {
                     scale: 40,
                 }}
             />
+            <TextoM2/>
+            
             <OrbitControls 
                 enableZoom={true} 
                 target={[0, 2, 0]}

@@ -102,10 +102,26 @@ const Header = () => {
                 </li>
               </ul>
             </li>
-            <li className="nav-item">
-              <NavLink to="/quiz" className="nav-link">
+            <li className="nav-item dropdown">
+              <span
+                className="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                style={{ cursor: "pointer", fontWeight: "500" }}
+              >
                 Quiz
-              </NavLink>
+              </span>
+              <ul className="dropdown-menu dropdown-menu-custom">
+                <li>
+                  <NavLink to="/resultados" className="dropdown-item">
+                    <span className="dropdown-text">Resultados</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/quiz" className="dropdown-item">
+                    <span className="dropdown-text">Presentar</span>
+                  </NavLink>
+                </li>                
+              </ul>
             </li>
             <li className="nav-item">
               <NavLink to="/nosotros" className="nav-link">

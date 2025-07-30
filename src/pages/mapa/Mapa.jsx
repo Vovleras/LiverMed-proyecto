@@ -47,6 +47,9 @@ const Mapa = () => {
           <li>
             <NavLink to="/Quiz">Quiz</NavLink>
           </li>
+          <li>
+            <NavLink to="/resultados">Resultados</NavLink>
+          </li>
         </ul>
         <h2>Autenticación</h2>
         <ul className="list-unstyled d-flex flex-column gap-2  text-start ps-custom">
