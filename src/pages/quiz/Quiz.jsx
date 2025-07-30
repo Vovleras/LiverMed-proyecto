@@ -10,12 +10,15 @@ import useAuthStore from "../../store/use-auth-store";
 import higadoIcono from "/imagenes/higadoIcono.png";
 
 import tutoria from "/imagenes/tutoria.png";
+import { useNavigate } from "react-router-dom";
+
 
 const Quiz = () => {
   const ballRef = useRef();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [isQuizComplete, setIsQuizComplete] = useState(false);
+  const navigate = useNavigate();
   const [start, setStart] = useState(false);
   const [pause, setPause] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -36,13 +39,18 @@ const Quiz = () => {
 
   useEffect(() => {
     if (isQuizComplete) {
+      navigate("/resultados");
       const loadFinalScore = async () => {
         const finalScore = await getScore();
-        setScore(finalScore);
+        setScore(finalScore);        
+        /*
+        setTimeout(() => { //esta vaina deja un tiempo adicional que al parecer no queremos para nada
+          navigate("/resultados"); 
+        }, 1);*/
+        
       };
-      loadFinalScore();
     }
-  }, [isQuizComplete, getScore]);
+  }, [isQuizComplete, getScore, navigate]);
 
   useEffect(() => {
     const loadCurrentQuestion = async () => {
@@ -296,7 +304,7 @@ const Quiz = () => {
     );
   }
 
-  if (isQuizComplete) {
+  if (1 === isQuizComplete) {
     return (
       <div
         style={{

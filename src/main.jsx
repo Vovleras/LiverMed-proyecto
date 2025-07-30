@@ -10,6 +10,7 @@ import Us from "./pages/sobreNosotros/Us.jsx";
 import Login from "./pages/login/Login.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Mapa from "./pages/mapa/Mapa.jsx";
+import Resultados from "./pages/resultados/Resultados.jsx";   
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -26,7 +27,15 @@ createRoot(document.getElementById("root")).render(
                 path="/quiz"
                 element={
                   <ProtectedRoute>
-                    <Quiz />
+                    <Quiz />                    
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/resultados"
+                element={
+                  <ProtectedRoute>
+                    <Resultados />                    
                   </ProtectedRoute>
                 }
               />

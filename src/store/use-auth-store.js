@@ -5,7 +5,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc, collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import { auth, db } from "../firebase.config";
 
 const provider = new GoogleAuthProvider();
@@ -152,6 +152,66 @@ const useAuthStore = create((set, get) => {
         }
       } catch (error) {
         console.error("Error guardando respuesta:", error);
+      }
+    },
+
+    getTopThreePlayers: async () => {
+      try {
+        const usersRef = collection(db, "Usuarios");
+        const q = query(usersRef, orderBy("Puntuación", "desc"), limit(3));
+        const querySnapshot = await getDocs(q);
+        
+        const topPlayers = [];
+        
+        querySnapshot.forEach((doc) => {
+          const userData = doc.data();
+          topPlayers.push({
+            puntaje: userData.Puntuación || 0,
+            nombre: userData.Nombre || "Anónimo",
+            foto: userData.foto || "https://cdn-icons-png.flaticon.com/512/12225/12225881.png" //solo sirve si firebase tiene la foto del usuario
+          });
+        });
+        while (topPlayers.length < 3) {
+          topPlayers.push({
+            puntaje: 0,
+            nombre: "---",
+            foto: "https://cdn-icons-png.flaticon.com/512/12225/12225881.png"
+          });
+        }
+
+        return topPlayers;
+
+      } catch (error) {
+        console.error("Error obteniendo top 3:", error);
+        return [
+          {puntaje: 0, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'},
+          {puntaje: 0, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'},
+          {puntaje: 0, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'}
+        ];
+      }
+    },
+    
+
+    getUserInfo: async () => {
+      const { userLooged } = get();
+      if (!userLooged) return;
+
+      try {
+        const userRef = doc(db, "Usuarios", userLooged.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (!userSnap.exists()) return null;
+
+        const userData = userSnap.data();
+        
+        return {
+          puntaje: userData.Puntuación || 0,
+          nombre: userData.Nombre || "Anónimo",
+          foto: userData.foto || "https://cdn-icons-png.flaticon.com/512/12225/12225881.png"
+        };
+      } catch (error) {
+        console.error("Error obteniendo datos del usuario:", error);
+        return null;
       }
     },
 
