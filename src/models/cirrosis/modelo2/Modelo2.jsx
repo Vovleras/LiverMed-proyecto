@@ -62,7 +62,7 @@ const Modelo2 = () => {
             </Canvas>
 
             <button className="expand-button" onClick={() => setIsExpanded(prev => !prev)}>
-                {isExpanded ? "Cerrar vista" : "Expandir"}
+                {isExpanded ? "Cerrar vista" : "Mas información"}
             </button>
 
             {isExpanded && (

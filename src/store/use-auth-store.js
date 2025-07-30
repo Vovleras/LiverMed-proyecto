@@ -204,10 +204,12 @@ const useAuthStore = create((set, get) => {
 
         const userData = userSnap.data();
         
+        const haydatos = !(userData.PreguntaActual === 0 && userData.Puntuación === 0);
         return {
           puntaje: userData.Puntuación || 0,
           nombre: userData.Nombre || "Anónimo",
-          foto: userData.foto || "https://cdn-icons-png.flaticon.com/512/12225/12225881.png"
+          foto: userData.foto || "https://cdn-icons-png.flaticon.com/512/12225/12225881.png",
+          haydatos
         };
       } catch (error) {
         console.error("Error obteniendo datos del usuario:", error);
