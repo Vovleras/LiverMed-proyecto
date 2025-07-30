@@ -6,9 +6,15 @@ import useAuthStore from '../../../store/use-auth-store.js'
 
 export function PodioModel({ ...props }) {
   const [topPlayers, setTopPlayers] = useState({
+<<<<<<< HEAD
     primero: {puntaje: 5, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'},
     segundo: {puntaje: 3, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'},
     tercero: {puntaje: 3, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'}
+=======
+    primero: {puntaje: 100, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'},
+    segundo: {puntaje: 50, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'},
+    tercero: {puntaje: 50, nombre: '---', foto: 'https://cdn-icons-png.flaticon.com/512/12225/12225881.png'}
+>>>>>>> 2bc9120fcee2a4eb86091a8acc3a13f01cf8c818
   });
   
   const { nodes, materials } = useGLTF('/models-3d/home-model/podio.glb')
@@ -32,6 +38,10 @@ export function PodioModel({ ...props }) {
     const loadPlayersData = async () => {
       try {
         const players = await getTopThreePlayers();
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 2bc9120fcee2a4eb86091a8acc3a13f01cf8c818
         if (players.length >= 3) {
           setTopPlayers({
             primero: {

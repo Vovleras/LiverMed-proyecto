@@ -63,6 +63,10 @@
 
 
 .result-title {
+<<<<<<< HEAD
+=======
+  margin-top: 6vh;
+>>>>>>> 2bc9120fcee2a4eb86091a8acc3a13f01cf8c818
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 32px;
@@ -209,7 +213,10 @@
 
 .summary-section {
   margin-top: 30px;
+<<<<<<< HEAD
   padding-bottom: 2vh;
+=======
+>>>>>>> 2bc9120fcee2a4eb86091a8acc3a13f01cf8c818
 }
 
 .summary-title {

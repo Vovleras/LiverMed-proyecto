@@ -29,6 +29,17 @@ createRoot(document.getElementById("root")).render(
                 element={
                   <ProtectedRoute>
                     <Quiz />                    
+<<<<<<< HEAD
+=======
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/resultados"
+                element={
+                  <ProtectedRoute>
+                    <Resultados />                    
+>>>>>>> 2bc9120fcee2a4eb86091a8acc3a13f01cf8c818
                   </ProtectedRoute>
                 }
               />
