@@ -34,7 +34,7 @@ const InteractiveQuestionMark = ({ VentanaInfo, setVentanaInfo }) => {
           position={[0,-0.02,0]}
           distanceFactor={0.8}
           fuente='7vh'
-          ancho='45vw'
+          ancho='43vw'
         />
       )}
     </Text3D>
